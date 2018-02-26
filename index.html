@@ -3,46 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>LUMTP</title>
-    <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+    <link rel="shortcut icon" type="image" href="../miss-fish.com/static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../miss-fish.com/static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../miss-fish.com/static/fish-css/index.css">
     <link rel="stylesheet" type="text/css" href='https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ'>
 
-    <script src="./static/fish-js/jquery.min.js"></script>
-    <script src="./static/fish-js/bootstrap.min.js"></script>
+    <script src="../miss-fish.com/static/fish-js/jquery.min.js"></script>
+    <script src="../miss-fish.com/static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
-<audio id="audio" src="./static/fish-voice/one.mp3" controls loop autoplay hidden></audio>
 <div class="container">
     <div id="nav">
+
     </div>
+    <div class="content-bd" style="text-align: right">
+        <h1>1. register new .IOU domain.</h1><br>
+        <h1>2. register new github account(yuliping520, ******i18)</h1><br>
+        <h1></h1><br>
 
+    </div>
 </div>
+</body>
 
-
-
-<script src="./static/fish-js/index.js"></script>
-
-<script>
-    function parseResponse(json) {
-        alert(json);
-    }
-</script>
-<script>
-    $(document).ready(function () {
-        
-        function audioAutoPlay(id) {
-            var audio = document.getElementById(id),
-                    play = function () {
-                        audio.play();
-                        document.removeEventListener("touchstart", play, false);
-                    };
-            audio.load();
-            audio.play();
-            document.addEventListener("touchstart", play, false);
-        }
-        audioAutoPlay('audio');
-
-    })
-</script>
 </html>
