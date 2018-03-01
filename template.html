@@ -16,13 +16,13 @@
 
     </div>
     <div class="content-bd" style="text-align: right">
-        {% for line in text.context %}
+        {%- for line in text.context -%}
             {% if line %}
                 <h1>{{ line }}</h1><br>
             {% else %}
                 <br>
             {% endif %}
-        {% endfor %}
+        {%- endfor -%}
         <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
 </div>
