@@ -13,9 +13,18 @@
 <body>
 <div class="container">
     <div id="nav">
-
+        <form>
+            <div class="form-group">
+                <label for="pwd">Email address</label>
+                <input type="email" class="form-control" id="pwd" placeholder="dairy's pwd.">
+            </div>
+            <div class="form-group" id="tip" hidden>
+                <p style="font-size: 2em"></p>
+            </div>
+            <button type="button" class="btn btn-info">查看</button>
+        </form>
     </div>
-    <div class="content-bd" style="text-align: right">
+    <div class="content-bd" style="text-align: right" hidden>
         <br><strong><p style="font-size: 3em">{{text.title}}</p></strong>
         <br><h3>{{ text.date }}</h3><br><br>
         {%- for line in text.context -%}
@@ -36,7 +45,15 @@
 
 <script>
     $(document).ready(function () {
-
+        $("button").click(function () {
+            if ($("#pwd")[0].value != '162602'){
+                $(".tip").show();
+                $(".tip p").innerText = 'pwd error.';
+                return
+            }
+            $("form").hide();
+            $(".content-bd").show();
+        });
     })
 </script>
 </html>
