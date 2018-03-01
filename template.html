@@ -16,6 +16,8 @@
 
     </div>
     <div class="content-bd" style="text-align: right">
+        <strong><p style="font-size: 3em">{{text.title}}</p></strong>
+        <h3>{{ text.date }}</h3>
         {%- for line in text.context -%}
             {% if line %}
                 <h1>{{ line }}</h1><br>
