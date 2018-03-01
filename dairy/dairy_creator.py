@@ -3,14 +3,13 @@ from datetime import datetime
 
 from jinja2 import Template
 
-from text import dairy
-
+from text import dairy_
 
 with open(os.getcwd() + '/template.html', 'r') as f:
     template = Template(f.read())
 
-    title = dairy.split('\n')[0]
-    context = dairy.split('\n')[1:]
+    title = dairy_.split('\n')[0]
+    context = dairy_.split('\n')[1:]
     text = {'title': title, 'context': context, 'date': datetime.now()}
 
     nature = template.render(text=text)

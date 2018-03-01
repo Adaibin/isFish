@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ text.title }}</title>
-    <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+    <link rel="shortcut icon" type="image" href="../static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/fish-css/index.css">
 
-    <script src="./static/fish-js/jquery.min.js"></script>
-    <script src="./static/fish-js/bootstrap.min.js"></script>
+    <script src="../static/fish-js/jquery.min.js"></script>
+    <script src="../static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -16,8 +16,8 @@
 
     </div>
     <div class="content-bd" style="text-align: right">
-        <strong><p style="font-size: 3em">{{text.title}}</p></strong>
-        <h3>{{ text.date }}</h3>
+        <br><strong><p style="font-size: 3em">{{text.title}}</p></strong>
+        <br><h3>{{ text.date }}</h3><br><br>
         {%- for line in text.context -%}
             {% if line %}
                 <h1>{{ line }}</h1><br>
@@ -32,7 +32,7 @@
 
 
 
-<script src="./static/fish-js/index.js"></script>
+<script src="../static/fish-js/index.js"></script>
 
 <script>
     $(document).ready(function () {
