@@ -13,10 +13,10 @@
 <body>
 <div class="container">
     <div id="nav">
-        <form>
-            <div class="form-group" style="font-size: 2em;text-align: center">
+        <form style="text-align: center">
+            <div class="form-group" style="font-size: 4em">
                 <label for="pwd">dairy's pwd</label>
-                <input type="email" class="form-control" id="pwd" placeholder="dairy's pwd.">
+                <input style="height: 52px;font-size: 1em" type="email" class="form-control" id="pwd" placeholder="dairy's pwd.">
             </div>
             <div class="form-group" id="tip" hidden>
                 <p style="font-size: 2em"></p>
@@ -26,7 +26,7 @@
     </div>
     <div class="content-bd" style="text-align: right" hidden>
         <br><strong><p style="font-size: 3em">生梦</p></strong>
-        <br><h3>2018-03-01 17:11:33.729166</h3><br><br>
+        <br><h3>2018-03-01 17:22:37.346122</h3><br><br>
                 <h1>12点睡, 1点40醒来, 做了个梦——</h1><br>
             
                 <h1>婴儿房里</h1><br>
@@ -71,8 +71,8 @@
     $(document).ready(function () {
         $("button").click(function () {
             if ($("#pwd")[0].value != '162602'){
-                $(".tip").show();
-                $(".tip p").innerText = 'pwd error.';
+                $("#tip").show();
+                $("#tip p")[0].innerText = 'pwd error.';
                 return
             }
             $("form").hide();
