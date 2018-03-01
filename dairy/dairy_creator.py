@@ -5,7 +5,7 @@ from jinja2 import Template
 
 from text import dairy_
 
-with open(os.getcwd() + '/template.html', 'r') as f:
+with open(os.getcwd() + '/template.html', 'r', encoding='utf-8') as f:
     template = Template(f.read())
 
     title = dairy_.split('\n')[0]
