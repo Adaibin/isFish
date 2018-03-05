@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 
 from jinja2 import Template
+import qrcode
 
 from text import dairy_
 
@@ -16,3 +17,13 @@ with open(os.getcwd() + '/template.html', 'r', encoding='utf-8') as f:
 
     with open(os.getcwd() + '/' + title + '.html', 'w', encoding='utf-8') as wf:
         wf.write(nature)
+
+qr = qrcode.QRCode(version=5,
+                   error_correction=qrcode.constants.ERROR_CORRECT_M,
+                   box_size=10,
+                   border=30)
+qr.add_data('http://xn--viqv0at04j.xn--6qq986b3xl/dairy/%E5%90%9B%E8%8B%A5%E7%9F%A5%E5%90%BE%E5%BF%83.html')
+qr.make()
+
+img = qr.make_image(fill_color="white", back_color="blue")
+img.save(open('qr.png', 'wb'))
