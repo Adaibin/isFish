@@ -3,7 +3,6 @@ from datetime import datetime
 
 from jinja2 import Template
 import qrcode
-import requests
 
 from text import dairy_
 
