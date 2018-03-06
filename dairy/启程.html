@@ -11,6 +11,7 @@
     <script src="../static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
+<audio id="audio" src="../static/fish-voice/启程.mp3" controls loop autoplay hidden></audio>
 <div class="container">
     <div id="nav" hidden>
         <form style="text-align: center">
@@ -34,7 +35,6 @@
                 <h1>从薪出发</h1><br>
             
                 <br>
-            <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
 </div>
 </body>
@@ -45,15 +45,20 @@
 
 <script>
     $(document).ready(function () {
-        $("button").click(function () {
-            if ($("#pwd")[0].value != '162602'){
-                $("#tip").show();
-                $("#tip p")[0].innerText = 'pwd error.';
-                return
-            }
-            $("form").hide();
-            $(".content-bd").show();
-        });
+
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+        audioAutoPlay('audio');
+
     })
 </script>
+
 </html>
