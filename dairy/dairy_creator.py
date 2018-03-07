@@ -18,7 +18,7 @@ with open(os.getcwd() + '/template.html', 'r', encoding='utf-8') as f:
     with open(os.getcwd() + '/' + title + '.html', 'w', encoding='utf-8') as wf:
         wf.write(nature)
 
-qr = qrcode.QRCode(version=5,
+qr = qrcode.QRCode(version=7,
                    error_correction=qrcode.constants.ERROR_CORRECT_M,
                    box_size=10,
                    border=30)
