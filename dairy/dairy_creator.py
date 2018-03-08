@@ -24,6 +24,7 @@ qr = qrcode.QRCode(version=7,
                    border=30)
 
 qr.add_data('http://xn--viqv0at04j.xn--6qq986b3xl/dairy/%s.html' % title)
+# qr.add_data('http://www.visitfinland.com/zh/')
 qr.make()
 
 img = qr.make_image(fill_color="white", back_color="blue")
