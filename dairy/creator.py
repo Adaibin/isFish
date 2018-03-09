@@ -1,8 +1,10 @@
 import os
-from datetime import date, datetime
+from datetime import datetime
 
 from jinja2 import Template
 import qrcode
+
+__author__ = 'Mr Fish.'
 
 domain = 'http://xn--viqv0at04j.xn--6qq986b3xl'
 
