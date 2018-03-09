@@ -11,22 +11,20 @@
     <script src="../static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
+{% if text.music %}
+<audio id="audio" src="./{{ text.folder }}/{{ text.music }}"
+       controls loop autoplay hidden></audio>
+{% endif %}
 <div class="container">
     <div id="nav" hidden>
-        <form style="text-align: center">
-            <div class="form-group" style="font-size: 4em;margin-bottom: 0px;">
-                <label for="pwd">DAIRY'S PWD</label>
-                <input style="height: 52px;font-size: 1em" type="email" class="form-control" id="pwd" placeholder="dairy's pwd.">
-            </div>
-            <div class="form-group" id="tip" hidden>
-                <p style="font-size: 2em"></p>
-            </div>
-            <button type="button" style="width: 100%" class="btn btn-lg btn-warning">查看</button>
-        </form>
+
     </div>
     <div class="content-bd" style="text-align: right">
         <br><strong><p style="font-size: 3em">{{text.title}}</p></strong>
         <br><h3>{{ text.date }}</h3><br><br>
+        {% for image in text.images %}
+            <span class="a-image"><img style="width: 70%" src="./{{ text.folder }}/{{image}}"></span><br>
+        {% endfor %}
         {%- for line in text.context -%}
             {% if line %}
                 <h1>{{ line }}</h1><br>
@@ -34,7 +32,6 @@
                 <br>
             {% endif %}
         {%- endfor -%}
-        <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
 </div>
 </body>
