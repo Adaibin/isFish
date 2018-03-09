@@ -15,10 +15,10 @@ def folder_():
     if not os.path.exists('folder.fish'):
         _ = open('folder.fish', 'w')
 
-    with open('folder.fish', 'r') as f_:
+    with open('folder.fish', 'r', encoding='utf-8') as f_:
         folders_ = f_.readlines()
         folders_new = [f for f in folders if f not in folders_]
-    with open('folder.fish', 'w') as f_:
+    with open('folder.fish', 'w', encoding='utf-8') as f_:
         for line in folders:
             f_.write(line + '\n')
 
@@ -33,7 +33,7 @@ def creator_(folder):
     if not os.path.exists(content_file):
         print('there is no content file in %s.' % folder)
         return False
-    with open(content_file, 'r') as f_:
+    with open(content_file, 'r', encoding='utf-8') as f_:
         content_ = f_.readlines()
         if len(content_) < 2:
             print('this is not content in content.fish.')
