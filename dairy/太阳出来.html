@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ text.title }}</title>
+    <title>太阳出来</title>
     <link rel="shortcut icon" type="image" href="../static/fish-image/fish.png"/>
     <link rel="stylesheet" type="text/css" href="../static/fish-css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../static/fish-css/index.css">
@@ -11,30 +11,38 @@
     <script src="../static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
+<audio id="audio" src="../static/fish-voice/大花轿.mp3" controls loop autoplay hidden></audio>
 <div class="container">
     <div id="nav" hidden>
-        <form style="text-align: center">
-            <div class="form-group" style="font-size: 4em;margin-bottom: 0px;">
-                <label for="pwd">DAIRY'S PWD</label>
-                <input style="height: 52px;font-size: 1em" type="email" class="form-control" id="pwd" placeholder="dairy's pwd.">
-            </div>
-            <div class="form-group" id="tip" hidden>
-                <p style="font-size: 2em"></p>
-            </div>
-            <button type="button" style="width: 100%" class="btn btn-lg btn-warning">查看</button>
-        </form>
+
     </div>
     <div class="content-bd" style="text-align: right">
-        <br><strong><p style="font-size: 3em">{{text.title}}</p></strong>
-        <br><h3>{{ text.date }}</h3><br><br>
-        {%- for line in text.context -%}
-            {% if line %}
-                <h1>{{ line }}</h1><br>
-            {% else %}
+        <br><strong><p style="font-size: 3em">太阳出来</p></strong>
+        <br><h3>2018-03-09 09:37:37.005087</h3><br><br>
+        <span class="a-image"><img src="../static/fish-image/20180309092911.jpg"></span>
+        <br><br>
+                <h1>吃饭的途中路过几米好阳光</h1><br>
+            
                 <br>
-            {% endif %}
-        {%- endfor -%}
-        <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
+            
+                <br>
+            
+                <h1>喝一碗不冷不热的甜粥</h1><br>
+            
+                <br>
+            
+                <h1>听一首暴露年龄的情歌——</h1><br>
+            
+                <br>
+            
+                <h1>大花轿</h1><br>
+            
+                <br>
+            
+                <h1>火风！</h1><br>
+            
+                <br>
+            <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
 </div>
 </body>
