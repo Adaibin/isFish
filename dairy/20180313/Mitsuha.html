@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mitsuha</title>
+    <link rel="shortcut icon" type="image" href="../../static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/index.css">
+
+    <script src="../../static/fish-js/jquery.min.js"></script>
+    <script src="../../static/fish-js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="nav" hidden>
+
+    </div>
+    <div class="content-bd" style="text-align: right">
+        <br><strong><p style="font-size: 3em">Mitsuha</p></strong>
+        <br><h3>2018-03-13 14:49:09.128224</h3><br><br>
+        
+                <h1>Once in a while when I wake up
+</h1><br>
+            
+                <h1>I find myself crying
+</h1><br>
+            
+                <h1>The dream I must have had
+</h1><br>
+            
+                <h1>I can never recall
+</h1><br>
+            
+                <h1>But...But...
+</h1><br>
+            
+                <h1>The sensation that I've lost something
+</h1><br>
+            
+                <h1>lingers for a long time after I wake up
+</h1><br>
+            
+                <h1>I am always searching
+</h1><br>
+            
+                <h1>for something, for someone
+</h1><br>
+            
+                <h1>This feeling has possessed me
+</h1><br>
+            
+                <h1>I think from that day...
+</h1><br>
+            
+                <h1>The day when the stars come falling
+</h1><br>
+            
+                <h1>It was almost as if...
+</h1><br>
+            
+                <h1>as if a scene from a dream
+</h1><br>
+            
+                <h1>Nothing more, Nothing less
+</h1><br>
+            
+                <h1>than a beautiful view.</h1><br>
+            </div>
+</div>
+</body>
+
+
+
+<script src="../../static/fish-js/index.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+    })
+</script>
+</html>
