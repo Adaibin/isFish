@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSR</title>
+    <link rel="shortcut icon" type="image" href="../../static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/index.css">
+
+    <script src="../../static/fish-js/jquery.min.js"></script>
+    <script src="../../static/fish-js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="nav" hidden>
+
+    </div>
+    <div class="content-bd" style="text-align: right">
+        <br><strong><p style="font-size: 3em">SSR</p></strong>
+        <br><h3>2018-03-15 11:49:51.834536</h3><br><br>
+        
+            <span class="a-image"><img style="width: 70%" src="./Finland_Nurmes_mirror_aurora.jpg"></span><br>
+        
+                <h1>有时过于依赖Server side renderer
+</h1><br>
+            
+                <h1>因为template language强大易用
+</h1><br>
+            
+                <h1>因为前端工夫差不想写前后分离
+</h1><br>
+            
+                <h1>SSR消耗更多服务端资源
+</h1><br>
+            
+                <h1>现在越来越觉得有必要来一次进化
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>front: 静态H5+动态Js(VUE?)
+</h1><br>
+            
+                <h1>server: H5(cache) + data
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>开搞！
+</h1><br>
+            </div>
+</div>
+</body>
+
+
+
+<script src="../../static/fish-js/index.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+    })
+</script>
+</html>
