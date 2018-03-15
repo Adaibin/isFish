@@ -19,6 +19,7 @@ def folder_():
 
     with open('folder.fish', 'r', encoding='utf-8') as f_:
         folders_ = f_.readlines()
+        folders_ = [f.strip() for f in folders_]
         folders_new = [f for f in folders if f not in folders_]
     with open('folder.fish', 'w', encoding='utf-8') as f_:
         for line in folders:
