@@ -257,6 +257,151 @@ Please make me a handsome Tokyo boy in my next life!
 What a fool...
 
 
+Ow, Ouch...
+Where?
+Something's there...
+Ow!
+Taki! Are you up?
+It was your turn to cook. Wake up on time.
+I'm sorry.
+I'm going now. Drink all the miso soup.
+OK.
+Go to school even if you are late.
+See you.
+Have a nice day.
+
+
+What a strange dream.
+"From Tsukasa: Run, you are late!"
+What? Who is it from? Tsukasa? Who is that?
+I have to use the bathroom.
+This is too realistic.
+
+
+I'm in Tokyo.
+
+
+Where'd you have it?
+Daikanyama.
+The front act at the next gig...
+Let's skip club and go to a movie.
+
+
+Taki!
+Arriving at noon, huh? Let's eat lunch.
+You ignored my text.
+Oh, Tsukasa?
+At least you sound apologetic.
+You got lost?
+Yeah.
+How could you get lost on the way to school?
+Uh...Well...I(watashi)...
+Feminine?
+I(watakushi)!
+I(boku)?
+I(ore)？
+I was enjoying myself.
+It's so festive and all in Tokyo.
+You seem to have a dialect...
+Where is you lunch?
+Geez.
+Are you half asleep?
+You got something?
+Croquette-egg sandwich sounds good!
+Thank you.
+Let's go to a cafe.
+Oh, That one? OK, Coming, Taki?
+What? What? What?
+A cafe?
+
+
+Nice timberwork up there.
+Yeah, attention to detail.
+Taki, Have you decided?
+What? I could live for a month for the price of these!
+What age are you from again?
+Hmm, Oh well. It's a dream anyway.
+What a great dream!
+Oh no, What should I do? I'm late for work!
+Your shift is today?
+Go, then.
+Oh, yeah.
+Oh, Um...
+Where do I worK?
+What?
+
+
+Tables 6, 7 and 10 are waiting!
+Table 12! Taki!
+Here you go.
+Uh, zucchini and tomato salad...
+We didn't order that.
+Taki! I said no more truffles!
+Taki! Can't hear you!
+Taki!
+When is this dream going to end?
+
+
+Hey, Hey waiter.
+Oh, yes?
+There was a toothpick in you pizza.
+We could have gotten hurt.
+Good thing I noticed.
+What do you have to say?
+Oh, Well...
+But...There are no toothpicks in an Italian restaurant's...
+Excuse me.
+Is everything ok?
+I'll handle this.
+What's wrong with you today?
+Please accept our apologies, Your meal is no the house.
+Oh, really?
+I hope you were not hurt.
+
+
+Um...
+Okudera...
+Ms. Okudera.
+Ms. Okudera. Thank you...
+A stroke of bad luck today.
+No, uh...
+Bet it was a set-up.
+Handled it according to the manual, but...
+Oh, Ms. Okudera, Your skirt!
+You OK?
+What happened?
+Slashed.
+That dick from earlier?
+What now? Do you remember his face?
+No.
+Come with me.
+Hey, Taki!
+Take off your skirt.
+Oh! I'll look the other way!
+This won't take long.
+Done!
+Wow, Taki! It looks better than before!
+Thank you for saving me today.
+Actually, I was concerned about you.
+You're weak but quick-tempered.
+I like you better today.
+Never knew you had a feminine side.
+
+
+"JR Yamanote Line: 7 min."
+
+What a realistic dream if I say so myself.
+Oh, he keeps a diary.
+He's so organized.
+Wish I lived in Tokyo too.
+Oh! That's her!
+A crush, maybe?
+
+
+
+
+
+
 
 
 
