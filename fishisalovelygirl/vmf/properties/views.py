@@ -8,6 +8,7 @@ def index(request):
     :param request:
     :return:
     """
+
     return HttpResponse("Hello, world. You're at the polls index.")
 
 

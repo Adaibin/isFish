@@ -3,6 +3,7 @@ from django.urls import path
 
 from vmf.user import views
 
+
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('detail/', views.index, name='detail'),
