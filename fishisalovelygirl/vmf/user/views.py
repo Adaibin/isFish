@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.http import HttpResponse
+from vmf.user.model import User
 
 
 def index(request):
@@ -8,6 +9,8 @@ def index(request):
     :param request:
     :return:
     """
+    user = User.objects.all()
+    print(len(user))
     return HttpResponse("Hello, world. You're at the polls index.")
 
 
