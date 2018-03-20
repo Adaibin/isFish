@@ -5,8 +5,8 @@ from vmf.properties import views
 
 urlpatterns = [
     path('index/', views.index, name='index'),
-    path('detail/', views.index, name='detail'),
-    path('create/', views.index, name='create'),
-    path('modify/', views.index, name='modify'),
-    path('delete/', views.index, name='delete'),
+    path('detail/', views.detail, name='detail'),
+    path('create/', views.create, name='create'),
+    path('modify/', views.modify, name='modify'),
+    path('delete/', views.delete, name='delete'),
 ]

@@ -11,7 +11,7 @@ def index(request):
     """
     user = User.objects.all()
     print(len(user))
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("user index.")
 
 
 def create(request):
@@ -20,7 +20,7 @@ def create(request):
     :param request:
     :return:
     """
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("user create.")
 
 
 def detail(request):
@@ -29,7 +29,7 @@ def detail(request):
     :param request:
     :return:
     """
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("user detail.")
 
 
 def modify(request):
@@ -38,7 +38,7 @@ def modify(request):
     :param request:
     :return:
     """
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("user modify.")
 
 
 def delete(request):
@@ -47,4 +47,4 @@ def delete(request):
     :param request:
     :return:
     """
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("user delete.")

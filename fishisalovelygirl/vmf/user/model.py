@@ -3,6 +3,9 @@ from django.db import models
 
 
 class User(models.Model):
+    """User
+    """
+
     id = models.AutoField(primary_key=True)
     version = models.IntegerField(default=1)
 
