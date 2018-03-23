@@ -1,12 +1,14 @@
 AndNextOne
-Understand, Trust, Support you.
-For
-current life!
+Completely understand, trust and support you.
+For anything,
+In current life!
 And the next one!
 
 
 
 理解、信任、支持你,
-这辈子,
-还有来生.
+
+不论何事，
+
+不论何时。
 : )
