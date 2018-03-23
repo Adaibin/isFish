@@ -1,5 +1,5 @@
 AndNextOne
-Completely understand, trust and support you.
+Fully understand, trust and support you.
 For anything,
 In current life!
 And the next one!
