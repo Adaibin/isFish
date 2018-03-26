@@ -46,9 +46,9 @@ def creator_(folder):
 
     # get image&music files
     files = os.listdir('/'.join((os.getcwd(), folder)))
-    files_ = {'.jpg': [], '.png': [], '.mp3': [], '.wma': []}
+    files_ = {'.gif': [], '.jpg': [], '.png': [], '.mp3': [], '.wma': []}
     [files_[f.lower()[-4:]].append(f) for f in files if f.lower()[-4:] in files_]
-    images = files_['.jpg'] + files_['.png']
+    images = files_['.gif'] + files_['.jpg'] + files_['.png']
     musics = files_['.mp3'] + files_['.wma']
     images.sort(), musics.sort()
     # remove qr code file
