@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .add-panel .panel-heading{
+            padding-bottom: 5px;
+            border-top-width: 5px;
+            padding-top: 5px;
+        }
+        .add-panel .panel-title{
+            float: left;
+            padding-top: 5px;
+        }
+        .add-panel #submit-btn{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="panel panel-info add-panel">
+    <div class="panel-heading">
+        <div class="text clearfix" style="text-align:center;">
+            <h5 class="panel-title">添加发布申请</h5>
+            <button id="submit-btn" type="button" class="btn btn-info btn-sm">提交</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form style="overflow: hidden;"
+              name="deploy_form" id="deploy_form" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+            <div class="col-lg-4">
+                <label for="jira_id">jira id<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.jira_id }}{% endif %}" name="jira_id" id="jira_id"
+                       class="form-control" placeholder="必填">
+            </div>
+
+            <div class="col-lg-4">
+                <label for="branch">发布分支<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.branch }}{% else %}master{% endif %}" name="branch" id="branch"
+                       class="form-control" placeholder="必填">
+            </div>
+            <div class="col-lg-4">
+                <label for="deploy_date">部署时间<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.deploy_date }}{% endif %}" name="deploy_date" id="deploy_date"
+                       class="form_datetime form-control">
+            </div>
+
+            <div class="col-lg-4">
+                <label for="dev">开发人员<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.dev }}{% endif %}" name="dev" id="dev" class="form-control"
+                       placeholder="必填">
+            </div>
+            <div class="col-lg-4">
+                <label for="test">测试人员<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.test }}{% endif %}" name="test" id="test" class="form-control"
+                       placeholder="必填">
+            </div>
+            <div class="col-lg-4">
+                <label for="pm">产品<span class="require-color">*</span></label>
+                <input value="{% if row %}{{ row.pm }}{% endif %}" name="pm" id="pm" class="form-control"
+                       placeholder="必填">
+            </div>
+
+            <div class="col-lg-6">
+                <label for="sql">SQL变更</label>
+                <select id="sql" data-size="10"
+                        name="sql"
+                        data-style="btn-info"
+                        title="请选择SQL工单"
+                        class="selectpicker form-control"
+                        data-live-search="true" multiple>
+                    {%- for sql in sql_|sort(reverse=true, attribute='system_id') -%}
+                    <option value="{{ sql.system_id }}">{{ sql.system_id }} {{ sql.creator_.name_ }} {{ sql.status }}
+                    </option>
+                    {%- endfor %}
+                </select>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
