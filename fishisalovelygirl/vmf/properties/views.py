@@ -1,70 +1,69 @@
 # -*- coding: utf-8 -*-
 """properties"""
+from flask import jsonify
 from flask import Blueprint
+from flask import request
 from flask_restful import Resource
+from sqlalchemy.orm.attributes import InstrumentedAttribute
 
+from vmf.user.model import User
+from vmf.group.model import Group
+from vmf.properties.model import Properties
 from app import cache
 
-bp_properties = Blueprint('bp_properties', __name__, template_folder='jinja2_')
+bp_properties = Blueprint('bp_properties', __name__, template_folder='templates/')
+
+pre_path = 'templates/properties/'
 
 
 @bp_properties.route('/vmf/properties/index',
                      methods=['GET'],
-                     endpoint='index-get')
-@cache.cached(timeout=36000)
-def index(type_='properties'):
+                     endpoint='index')
+@bp_properties.route('/vmf/properties/detail',
+                     methods=['GET'],
+                     endpoint='detail')
+@bp_properties.route('/vmf/properties/create',
+                     methods=['GET'],
+                     endpoint='create')
+@bp_properties.route('/vmf/properties/modify',
+                     methods=['GET'],
+                     endpoint='modify')
+@bp_properties.route('/vmf/properties/delete',
+                     methods=['GET'],
+                     endpoint='delete')
+# @cache.cached(timeout=36000)
+def index():
     """
     index
-    :param type_:
     :return:
     """
-    with open(''.join(('jinja2_/', type_, '/', 'index.html'))) as f:
+    if '.' in request.endpoint:
+        endpoint = request.endpoint.split('.')[-1]
+    else:
+        endpoint = request.endpoint
+    with open(''.join((pre_path, endpoint, '.html'))) as f:
         return f.read()
 
 
-@bp_properties.route('/vmf/properties/create',
+@bp_properties.route('/vmf/properties/create-get',
                      methods=['GET'],
                      endpoint='create-get')
-def create():
-    """
-    create
-    :return:
+def create_():
+    """create_
     """
 
-    return HttpResponse("properties create.")
+    def func_(table):
+        """
 
+        :param table:
+        :return:
+        """
+        return User.__table__.columns._data._list
 
-@bp_properties.route('/vmf/properties/detail',
-                     methods=['GET'],
-                     endpoint='detail-get')
-def detail():
-    """
-    detail
-    :return:
-    """
-    return HttpResponse("properties detail.")
-
-
-@bp_properties.route('/vmf/properties/modify',
-                     methods=['GET'],
-                     endpoint='modify-get')
-def modify():
-    """
-    modify
-    :return:
-    """
-    return HttpResponse("properties modify.")
-
-
-@bp_properties.route('/vmf/properties/delete',
-                     methods=['GET'],
-                     endpoint='delete-get')
-def delete():
-    """
-    delete
-    :return:
-    """
-    return HttpResponse("properties delete.")
+    return jsonify({'tables': sorted(['User', 'Group', 'Properties']),
+                    'fields': {'User': func_(User),
+                               'Group': func_(Group),
+                               'Properties': func_(Properties)}})
 
 
 class PropertiesRes(Resource):
