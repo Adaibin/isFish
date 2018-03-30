@@ -1,68 +1,92 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
-from django.apps import apps
-from django.template.response import TemplateResponse
+"""properties"""
+from flask import Blueprint
+from flask_restful import Resource
+
+from app import cache
+
+bp_properties = Blueprint('bp_properties', __name__, template_folder='jinja2_')
 
 
-def get_fields(app, model):
+@bp_properties.route('/vmf/properties/index',
+                     methods=['GET'],
+                     endpoint='index-get')
+@cache.cached(timeout=36000)
+def index(type_='properties'):
     """
-
-    :param app:
-    :param model:
+    index
+    :param type_:
+    :return:
     """
+    with open(''.join(('jinja2_/', type_, '/', 'index.html'))) as f:
+        return f.read()
 
-    return apps.get_model(app, model)._meta.fields
 
-
-def index(request):
+@bp_properties.route('/vmf/properties/create',
+                     methods=['GET'],
+                     endpoint='create-get')
+def create():
     """
-
-    :param request:
+    create
     :return:
     """
 
-    return HttpResponse("properties index.")
+    return HttpResponse("properties create.")
 
 
-def create(request):
+@bp_properties.route('/vmf/properties/detail',
+                     methods=['GET'],
+                     endpoint='detail-get')
+def detail():
     """
-
-    :param request:
-    :return:
-    """
-    models_ = apps.all_models['vmf']
-
-    fields_ = {}
-    for m in models_:
-        fields_[m] = get_fields('vmf', m)
-    t = TemplateResponse(request, '/properties/create.html', locals())
-    t.render()
-
-    return t
-
-
-def detail(request):
-    """
-
-    :param request:
+    detail
     :return:
     """
     return HttpResponse("properties detail.")
 
 
-def modify(request):
+@bp_properties.route('/vmf/properties/modify',
+                     methods=['GET'],
+                     endpoint='modify-get')
+def modify():
     """
-
-    :param request:
+    modify
     :return:
     """
     return HttpResponse("properties modify.")
 
 
-def delete(request):
+@bp_properties.route('/vmf/properties/delete',
+                     methods=['GET'],
+                     endpoint='delete-get')
+def delete():
     """
-
-    :param request:
+    delete
     :return:
     """
     return HttpResponse("properties delete.")
+
+
+class PropertiesRes(Resource):
+    """PropertiesRes
+    """
+
+    def get(self):
+        """get
+        """
+        pass
+
+    def put(self):
+        """put
+        """
+        pass
+
+    def post(self):
+        """post
+        """
+        pass
+
+    def delete(self):
+        """delete
+        """
+        pass

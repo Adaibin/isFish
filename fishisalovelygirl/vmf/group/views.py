@@ -1,8 +1,20 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
-from vmf.group.model import Group
+"""group"""
+import json
+
+from flask import Blueprint
+from flask import jsonify
+from flask import render_template
+from flask import session as f_session
+from flask_restful import Resource
 
 
+bp_group = Blueprint('bp_group', __name__, template_folder='jinja2_')
+
+
+@bp_group.route('/group/index',
+                methods=['GET'],
+                endpoint='index-get')
 def index(request):
     """
 
@@ -46,3 +58,28 @@ def delete(request):
     :return:
     """
     return HttpResponse("group delete.")
+
+
+class GroupRes(Resource):
+    """PropertiesRes
+    """
+
+    def get(self):
+        """get
+        """
+        pass
+
+    def put(self):
+        """put
+        """
+        pass
+
+    def post(self):
+        """post
+        """
+        pass
+
+    def delete(self):
+        """delete
+        """
+        pass
