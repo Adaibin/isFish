@@ -22,9 +22,10 @@ def register_bp(app_):
     app_.register_blueprint(bp_user)
 
     api = Api(app_)
-    api.add_resource(PropertiesRes, '/properties/<int:id_>')
-    api.add_resource(GroupRes, '/group<int:id_>')
-    api.add_resource(UserRes, '/user<int:id_>')
+    api.add_resource(PropertiesRes, '/rest/properties/<int:id_>')
+    api.add_resource(GroupRes, '/rest/group/<int:id_>')
+    api.add_resource(UserRes, '/rest/user/<int:id_>')
+    # api.add_resource(UserRes, '/rest/md5/<string:md5>')
 
 
 

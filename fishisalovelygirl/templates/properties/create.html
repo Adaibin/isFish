@@ -62,25 +62,15 @@
                     </div>
                 </div>
                 <hr>
+                <div id="property">
 
-                <div class="form-group required">
-                    <label class="col-sm-2 control-label">记录值*</label>
-                    <div class="col-sm-10" data-name="value">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Index
-                            </label>
-
-                            <label>
-                                <input type="checkbox"> Edit
-                            </label>
-                        </div>
-
-                    </div>
                 </div>
             </form>
         </div>
     </div>
+</div>
+<div id="foot">
+    <a id="a-index" href="">Index</a>
 </div>
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
@@ -90,7 +80,7 @@
     $(document).ready(function () {
         var tables;
         var fields;
-        axios.get('/vmf/properties/create-get')
+        axios.get('/vmf/md5/{{ axios_ }}')
                 .then(function (rsp) {
 
                     tables = rsp.data.tables;
@@ -104,16 +94,34 @@
                     }
                     $('#table_').selectpicker('refresh');
 
+                    var urls = rsp.data.urls;
+                    $("#a-index").attr('href', '/vmf/md5/'+urls[0]);
+
                 });
         $('#table_').on('changed.bs.select', function (e) {
             var fields_ = fields[$('#table_').selectpicker('val')];
             console.log(fields_);
 
-            for (var i=0;i<fields_.length;i++){
-
+            $("#property").html("");
+            for (var i = 0; i < fields_.length; i++) {
+                var item = '<div class="form-group required">'
+                + '<label class="col-sm-2 control-label">'
+                + fields_[i]
+                + '</label>'
+                + '<div class="col-sm-10" data-name="value">'
+                + '<div class="checkbox">'
+                + '<label>'
+                + '<input type="checkbox"> Index'
+                + '</label>'
+                + '<label>'
+                + '<input type="checkbox"> Edit'
+                + '</label>'
+                + '</div>'
+                + '</div>'
+                + '</div>';
+                $("#property").append(item);
             }
         });
-
     });
 
 </script>
