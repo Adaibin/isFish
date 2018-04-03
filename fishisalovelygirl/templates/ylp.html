@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="foot">
+    <a class="a-index" href="">User</a>
+    <a class="a-index" href="">Group</a>
+    <a class="a-index" href="">Properties</a>
+
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/axios.min.js"></script>
+<script>
+    $(document).ready(function () {
+        axios.get('/')
+                .then(function (rsp) {
+
+                    var urls = rsp.data.urls;
+                    console.log(urls);
+
+                    var index = $(".a-index");
+                    for (var i=0; i<urls.length; i++){
+                        index[i].attr('href', '/vmf/md5/' + urls[i])
+                    }
+                });
+
+    });
+
+</script>
+</body>
+</html>

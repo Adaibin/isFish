@@ -17,6 +17,6 @@ def url_to_md5(url, update=True):
 
     md5_ = cache.get(url)
     if md5_ != md5 and update:
-        cache.set(key=url, value=md5, timeout=24 * 60 * 60)
-        cache.set(key=md5, value=url, timeout=24 * 60 * 60)
+        cache.set(key=url, value=md5, timeout=60 * 60)
+        cache.set(key=md5, value=url, timeout=60 * 60)
     return md5
