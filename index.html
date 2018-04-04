@@ -48,7 +48,10 @@
                     var access_token = rsp.data.access_token;
                     alert(access_token);
 
-                });
+                })
+                .catch(function (error) {
+                    console.log(error);
+        });
 //        window.location.href = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE'
     })
 </script>
