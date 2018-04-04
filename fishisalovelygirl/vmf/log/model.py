@@ -12,10 +12,10 @@ from sqlalchemy.orm import relationship
 from mysql_engine import Base, engine
 
 
-class M0(Base):
-    """M0"""
+class Log(Base):
+    """Log"""
 
-    __tablename__ = 'm0'
+    __tablename__ = 'log'
 
     id = Column(Integer, primary_key=True)
     version = Column(Integer, default=1)

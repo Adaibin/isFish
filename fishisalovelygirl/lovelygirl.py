@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 """lg"""
+import json
 from datetime import date
+from datetime import datetime
 
 from flask import g
 from flask import jsonify
 from flask import request
 from flask import redirect
+from flask import session as fs
+from flask_login import login_required
+from flask_sqlalchemy_session import current_session
 from flask_sqlalchemy_session import flask_scoped_session
 
 from app import lg
@@ -14,7 +19,7 @@ from blueprints import urls
 from vmf.properties.views import ViewProperties
 from vmf.user.views import ViewUser
 from vmf.group.views import ViewGroup
-from vmf.m0.views import ViewM0
+from vmf.log.views import ViewLog
 from vmf.m1.views import ViewM1
 from vmf.m2.views import ViewM2
 from vmf.m3.views import ViewM3
@@ -24,6 +29,7 @@ from vmf.m6.views import ViewM6
 from vmf.m7.views import ViewM7
 from vmf.m8.views import ViewM8
 from vmf.m9.views import ViewM9
+from vmf.log.model import Log
 from functions import get_md5s
 from mysql_engine import session_factory
 
@@ -34,7 +40,7 @@ flask_session = flask_scoped_session(session_factory, lg)
 views = {'properties': ViewProperties,
          'user': ViewUser,
          'group': ViewGroup,
-         'm0': ViewM0,
+         'log': ViewLog,
          'm1': ViewM1,
          'm2': ViewM2,
          'm3': ViewM3,
@@ -58,9 +64,16 @@ def before():
         lg.md5_time = str(date.today())
 
 
+@lg.after_request
+def after(response):
+    """after
+    """
+    return response
+
+
 @lg.route('/vmf/md5/<string:md5>',
-          methods=['GET', 'POST'],
-          endpoint='md5')
+          methods=['GET', 'POST'], endpoint='md5')
+@login_required
 def visit_md5(md5):
     """
     visit by md5
@@ -73,10 +86,26 @@ def visit_md5(md5):
     url = lg.urls[md5] if md5 in lg.urls else lg.urls_pre[md5]
 
     if request.method == 'POST' and urls[url]:
+        # create log
+        log_data = {'user_id': fs['user_id'],
+                    'time_': datetime.now(),
+                    'form': json.dumps(g.form.data)}
+        log = Log(**log_data)
+        current_session.add(log)
+        current_session.refresh()
+        current_session.commit()
+
+        g.log_id = log.id
         g.form = urls[url]()
+
         if not g.form.validate():
             message = ' '.join([', '.join(er) for er in g.form.errors.values()])
-            return jsonify({'status': False, 'message': message})
+            results = {'status': False, 'message': message}
+            # update log
+            current_session.query(Log).\
+                filter_by(id=g.log_id).\
+                update({'results': results})
+            return jsonify(results)
 
     view = views[url.split('/')[2]]
     return view().get(url)
@@ -101,7 +130,7 @@ def ylp_get():
                              md5s['/vmf/group/index'],
                              md5s['/vmf/properties/index'],
 
-                             md5s['/vmf/m0/index'],
+                             md5s['/vmf/log/index'],
                              md5s['/vmf/m1/index'],
                              md5s['/vmf/m2/index'],
 
@@ -114,7 +143,6 @@ def ylp_get():
                              md5s['/vmf/m8/index'],
 
                              md5s['/vmf/m9/index'],
-
                              ]})
 
 

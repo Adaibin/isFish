@@ -1,34 +1,34 @@
 # -*- coding: utf-8 -*-
-"""m0"""
+"""log"""
 from flask import g
 from flask import jsonify
 from flask import Blueprint
 from flask import render_template
 from app import lg
 
-bp_m0 = Blueprint('bp_m0', __name__, template_folder='templates/')
+bp_log = Blueprint('bp_log', __name__, template_folder='templates/')
 
 
-class ViewM0(object):
-    """ViewM0
+class ViewLog(object):
+    """ViewLog
     """
 
     def __init__(self):
-        self._dict = {'/vmf/m0/index': self.index,
-                      '/vmf/m0/create': self.index,
-                      '/vmf/m0/detail': self.index,
-                      '/vmf/m0/modify': self.index,
-                      '/vmf/m0/delete': self.index,
-                      '/vmf/m0/index-get': self.index_get,
-                      '/vmf/m0/create-get': self.create_get,
-                      '/vmf/m0/detail-get': self.detail_get,
-                      '/vmf/m0/modify-get': self.modify_get,
-                      '/vmf/m0/delete-get': self.delete_get,
-                      '/vmf/m0/index-post': self.index_post,
-                      '/vmf/m0/create-post': self.create_post,
-                      '/vmf/m0/detail-post': self.detail_post,
-                      '/vmf/m0/modify-post': self.modify_post,
-                      '/vmf/m0/delete-post': self.delete_post
+        self._dict = {'/vmf/log/index': self.index,
+                      '/vmf/log/create': self.index,
+                      '/vmf/log/detail': self.index,
+                      '/vmf/log/modify': self.index,
+                      '/vmf/log/delete': self.index,
+                      '/vmf/log/index-get': self.index_get,
+                      '/vmf/log/create-get': self.create_get,
+                      '/vmf/log/detail-get': self.detail_get,
+                      '/vmf/log/modify-get': self.modify_get,
+                      '/vmf/log/delete-get': self.delete_get,
+                      '/vmf/log/index-post': self.index_post,
+                      '/vmf/log/create-post': self.create_post,
+                      '/vmf/log/detail-post': self.detail_post,
+                      '/vmf/log/modify-post': self.modify_post,
+                      '/vmf/log/delete-post': self.delete_post
                       }
 
     def get(self, url):
@@ -47,15 +47,15 @@ class ViewM0(object):
     def index_get(*args):
         """index
         """
-        u1 = lg.md5s['/vmf/m0/create']
+        u1 = lg.md5s['/vmf/log/create']
         return jsonify({'urls': [u1, ]})
 
     @staticmethod
     def create_get(*args):
         """create
         """
-        u1 = lg.md5s['/vmf/m0/create-post']
-        u2 = lg.md5s['/vmf/m0/index']
+        u1 = lg.md5s['/vmf/log/create-post']
+        u2 = lg.md5s['/vmf/log/index']
         return jsonify({'urls': [u1, u2]})
 
     @staticmethod

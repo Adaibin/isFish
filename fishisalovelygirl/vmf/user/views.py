@@ -3,17 +3,25 @@
 from flask import g
 from flask import jsonify
 from flask import Blueprint
-from flask import render_template
 from app import lg
+from functions import View
 
 bp_user = Blueprint('bp_user', __name__, template_folder='templates/')
 
 
-class ViewUser(object):
+@bp_user.route('/vmf/user/detail/<int:id_>',
+               methods=['GET'], endpoint='detail')
+def detail(id_):
+    pass
+
+
+class ViewUser(View):
     """ViewUser
     """
 
     def __init__(self):
+        super(ViewUser, self).__init__()
+
         self._dict = {'/vmf/user/index': self.index,
                       '/vmf/user/create': self.index,
                       '/vmf/user/detail': self.index,
@@ -30,18 +38,6 @@ class ViewUser(object):
                       '/vmf/user/modify-post': self.modify_post,
                       '/vmf/user/delete-post': self.delete_post
                       }
-
-    def get(self, url):
-        """get
-        """
-        return self._dict[url](url)
-
-    @staticmethod
-    def index(url):
-        """index
-        """
-        _get = lg.md5s['-'.join((url, 'get'))]
-        return render_template(''.join((url, '.html')), **locals())
 
     @staticmethod
     def index_get(*args):
@@ -84,11 +80,13 @@ class ViewUser(object):
         pass
 
     @staticmethod
-    def create_post(*args):
+    def create_post(self, *args):
         """create
         """
         form = g.form
-        return jsonify({'status': True, 'message': 'Create success!'})
+        results = {'status': True, 'message': 'Create success!'}
+        super().update_log(results)
+        return jsonify(results)
 
     @staticmethod
     def detail_post(*args):

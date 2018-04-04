@@ -7,16 +7,16 @@ from wtforms import ValidationError
 from wtforms import validators
 from flask_sqlalchemy_session import current_session
 
-from vmf.m0.model import M0
+from vmf.log.model import Log
 from vmf.base_form import IdVersionForm
 from vmf.base_form import IdsVersionsForm
 
 
-index_dict = {'name': M0.name.contains}
+index_dict = {'name': Log.name.contains}
 
 
-class M0BaseForm(FlaskForm):
-    """M0 Base"""
+class LogBaseForm(FlaskForm):
+    """Log Base"""
     name = StringField('name',
                        [validators.required(message='name is require.'),
                         validators.length(max=20,
@@ -40,8 +40,8 @@ class M0BaseForm(FlaskForm):
         return data
 
 
-class M0IndexForm(FlaskForm):
-    """M0Index"""
+class LogIndexForm(FlaskForm):
+    """LogIndex"""
     NAME = '搜索组'
 
     endpoints = {'success': '',
@@ -62,17 +62,17 @@ class M0IndexForm(FlaskForm):
         value = self.value.data.strip()
 
         if not value:
-            query = current_session.query(M0)
+            query = current_session.query(Log)
         else:
             cp = index_dict[self.field.data](value)
-            query = current_session.query(M0).filter(cp)
+            query = current_session.query(Log).filter(cp)
 
         rows = query.all()
         return rows
 
 
-class M0CreateForm(M0BaseForm):
-    """M0 Create"""
+class LogCreateForm(LogBaseForm):
+    """Log Create"""
     NAME = '添加组'
 
     endpoints = {'success': 'bp_group.index',
@@ -85,15 +85,15 @@ class M0CreateForm(M0BaseForm):
         :param _:
         :param field:
         """
-        if current_session.query(M0).filter_by(name=field.data).first():
+        if current_session.query(Log).filter_by(name=field.data).first():
             raise ValidationError('name is existed: (%s).' % field.data)
 
 
-class M0ModifyForm(M0BaseForm, IdVersionForm):
-    """M0 Modify"""
+class LogModifyForm(LogBaseForm, IdVersionForm):
+    """Log Modify"""
     NAME = '编辑组'
 
-    target = M0
+    target = Log
     endpoints = {'success': 'bp_group.index',
                  'failed': ''}
 
@@ -105,17 +105,17 @@ class M0ModifyForm(M0BaseForm, IdVersionForm):
         :param form:
         :param field:
         """
-        row = current_session.query(M0).\
+        row = current_session.query(Log).\
             filter_by(**{'name': field.data}).first()
         if row and row.id != form.id.data:
             raise ValidationError('name is existed: (%s).' % field.data)
 
 
-class M0DeleteForm(IdsVersionsForm):
-    """M0 Delete"""
+class LogDeleteForm(IdsVersionsForm):
+    """Log Delete"""
     NAME = '删除组'
 
-    target = M0
+    target = Log
     endpoints = {'success': 'bp_group.index',
                  'failed': 'bp_group.index'}
 
