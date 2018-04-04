@@ -9,6 +9,7 @@
 
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
+    <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
 </head>
 <body>
 <div class="container">
@@ -17,11 +18,11 @@
     </div>
     <div class="content-bd" style="text-align: right">
         {% for line in text.context %}
-            {% if line %}
-                <h1>{{ line }}</h1><br>
-            {% else %}
-                <br>
-            {% endif %}
+        {% if line %}
+        <h1>{{ line }}</h1><br>
+        {% else %}
+        <br>
+        {% endif %}
         {% endfor %}
         <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
@@ -29,12 +30,20 @@
 </body>
 
 
-
 <script src="./static/fish-js/index.js"></script>
 
 <script>
     $(document).ready(function () {
+        window.WwLogin({
+            "id": "wx_reg",
+            "appid": "wx7cc2586b6e9016a7",
+            "agentid": "1000002",
+            "redirect_uri": "http://xn--viqv0at04j.xn--6qq986b3xl/todo.html",
+            "state": "",
+            "href": "",
+        });
 
+        window.location.href = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE'
     })
 </script>
 </html>
