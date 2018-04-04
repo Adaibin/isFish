@@ -9,6 +9,7 @@
 
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
+    <script src="./static/fish-js/axios.min.js"></script>
     <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
 </head>
 <body>
@@ -42,8 +43,14 @@
             "state": "",
             "href": "",
         });
+        axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpidwx7cc2586b6e9016a7=&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ')
+                .then(function (rsp) {
 
-        window.location.href = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE'
+                    var access_token = rsp.data.access_token;
+                    console.log(access_token);
+
+                });
+//        window.location.href = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE'
     })
 </script>
 </html>
