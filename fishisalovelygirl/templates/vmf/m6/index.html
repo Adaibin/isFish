@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index M6</title>
+</head>
+<body>
+<div id="foot">
+    <a id="a-create" href="">Create</a>
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/axios.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        axios.get('/vmf/md5/{{ _get }}')
+                .then(function (rsp) {
+
+                    var urls = rsp.data.urls;
+                    $("#a-create").attr('href', '/vmf/md5/' + urls[0]);
+
+                });
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """properties"""
+from flask import g
 from flask import jsonify
 from flask import Blueprint
 from flask import render_template
-from vmf.user.model import User
-from vmf.group.model import Group
-from vmf.properties.model import Properties
 from app import lg
+
+from vmf.group.model import Group
+from vmf.user.model import User
+from vmf.properties.model import Properties
 
 bp_properties = Blueprint('bp_properties', __name__, template_folder='templates/')
 
@@ -25,7 +27,12 @@ class ViewProperties(object):
                       '/vmf/properties/create-get': self.create_get,
                       '/vmf/properties/detail-get': self.detail_get,
                       '/vmf/properties/modify-get': self.modify_get,
-                      '/vmf/properties/delete-get': self.delete_get
+                      '/vmf/properties/delete-get': self.delete_get,
+                      '/vmf/properties/index-post': self.index_post,
+                      '/vmf/properties/create-post': self.create_post,
+                      '/vmf/properties/detail-post': self.detail_post,
+                      '/vmf/properties/modify-post': self.modify_post,
+                      '/vmf/properties/delete-post': self.delete_post
                       }
 
     def get(self, url):
@@ -37,7 +44,7 @@ class ViewProperties(object):
     def index(url):
         """index
         """
-        axios_ = lg.md5s['-'.join((url, 'get'))]
+        _get = lg.md5s['-'.join((url, 'get'))]
         return render_template(''.join((url, '.html')), **locals())
 
     @staticmethod
@@ -49,7 +56,7 @@ class ViewProperties(object):
 
     @staticmethod
     def create_get(*args):
-        """index
+        """create
         """
 
         def func_(table):
@@ -60,28 +67,60 @@ class ViewProperties(object):
             """
             return table.__table__.columns._data._list
 
-        u1 = lg.md5s['/vmf/properties/index']
+        u1 = lg.md5s['/vmf/properties/create-post']
+        u2 = lg.md5s['/vmf/properties/index']
 
-        return jsonify({'tables': sorted(['User', 'Group', 'Properties']),
+        return jsonify({'tables': sorted(['User', 'Properties', 'Properties']),
                         'fields': {'User': func_(User),
                                    'Group': func_(Group),
                                    'Properties': func_(Properties)},
-                        'urls': [u1, ]})
+                        'urls': [u1, u2]})
 
     @staticmethod
     def detail_get(*args):
-        """index
+        """detail
         """
         pass
 
     @staticmethod
     def modify_get(*args):
-        """index
+        """modify
         """
         pass
 
     @staticmethod
     def delete_get(*args):
+        """delete
+        """
+        pass
+
+    @staticmethod
+    def index_post(*args):
         """index
+        """
+        pass
+
+    @staticmethod
+    def create_post(*args):
+        """create
+        """
+        form = g.form
+        return jsonify({'status': True, 'message': 'Create success!'})
+
+    @staticmethod
+    def detail_post(*args):
+        """detail
+        """
+        pass
+
+    @staticmethod
+    def modify_post(*args):
+        """modify
+        """
+        pass
+
+    @staticmethod
+    def delete_post(*args):
+        """delete
         """
         pass

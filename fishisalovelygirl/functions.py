@@ -1,22 +1,26 @@
 # -*- coding: utf-8 -*-
 """functions"""
 import hashlib
-from datetime import datetime
-
-from app import cache
+from datetime import date
 
 
-def url_to_md5(url, update=True):
+def func_md5(s, append=str(date.today()), pre=''):
     """
-    translate url to md5
-    :param url:
-    :param update:
+    func md5
+    :param s: u1
+    :param append: append
+    :param pre: pre
+    :return: md5
     """
-    date = str(datetime.today())
-    md5 = hashlib.md5(''.join((url, date)).encode()).hexdigest()
+    return hashlib.md5(''.join((pre, s, append)).encode()).hexdigest()
 
-    md5_ = cache.get(url)
-    if md5_ != md5 and update:
-        cache.set(key=url, value=md5, timeout=60 * 60)
-        cache.set(key=md5, value=url, timeout=60 * 60)
-    return md5
+
+def get_md5s(list_):
+    """
+    get md5s
+    :param list_:[u1, u2]
+    :return: {u1: m1, u2: m2}, {m1: u1, m2: u2}
+    """
+    _md5s = dict([(l, func_md5(l)) for l in list_])
+    _urls = dict([(_md5s[m], m) for m in _md5s])
+    return _md5s, _urls

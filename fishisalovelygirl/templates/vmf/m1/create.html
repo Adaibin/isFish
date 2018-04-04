@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create M1</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-select.min.css">
+
+    <style>
+        .add-panel .panel-heading {
+            padding-bottom: 5px;
+            border-top-width: 5px;
+            padding-top: 5px;
+        }
+
+        .add-panel .panel-title {
+            float: left;
+            padding-top: 5px;
+        }
+
+        .add-panel #submit-btn {
+            float: right;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        hr {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="panel panel-info add-panel">
+    <div class="panel-heading">
+        <div class="text clearfix" style="text-align:center;">
+            <h5 class="panel-title">Create User</h5>
+            <button id="submit-btn" type="button" class="btn btn-info btn-sm">提交</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-lg-6">
+            <form id="form" method="post" class="form-horizontal">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <input type="hidden" name="action_type" value="0"/>
+                <input type="hidden" name="action_id" value=""/>
+                <div class="form-group required">
+                    <label for="table_" class="col-sm-2 control-label">Table*</label>
+                    <div class="col-sm-10" data-name="table_">
+                        <select id="table_" data-size="10" name="table_"
+                                data-style="btn-default"
+                                title="Please chose a table"
+                                class="selectpicker form-control"
+                                data-live-search="true">
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div id="property">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="foot">
+    <a id="a-index" href="">Index</a>
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-select.js"></script>
+<script src="/static/js/axios.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var tables;
+        var fields;
+        axios.get('/vmf/md5/{{ _get }}')
+                .then(function (rsp) {
+
+                    tables = rsp.data.tables;
+                    fields = rsp.data.fields;
+                    console.log(tables);
+                    console.log(fields);
+
+                    $('#table_').html("");
+                    for (var i = 0; i < tables.length; i++) {
+                        $('#table_').append("<option value=\"" + tables[i] + "\">" + tables[i] + "</option>");
+                    }
+                    $('#table_').selectpicker('refresh');
+
+                    var urls = rsp.data.urls;
+                    $("#a-index").attr('href', '/vmf/md5/'+urls[1]);
+
+                });
+        $('#table_').on('changed.bs.select', function (e) {
+            var fields_ = fields[$('#table_').selectpicker('val')];
+            console.log(fields_);
+
+            $("#property").html("");
+            for (var i = 0; i < fields_.length; i++) {
+                var item = '<div class="form-group required">'
+                + '<label class="col-sm-2 control-label">'
+                + fields_[i]
+                + '</label>'
+                + '<div class="col-sm-10" data-name="value">'
+                + '<div class="checkbox">'
+                + '<label>'
+                + '<input type="checkbox"> Index'
+                + '</label>'
+                + '<label>'
+                + '<input type="checkbox"> Edit'
+                + '</label>'
+                + '</div>'
+                + '</div>'
+                + '</div>';
+                $("#property").append(item);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

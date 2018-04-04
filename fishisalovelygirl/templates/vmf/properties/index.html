@@ -14,7 +14,7 @@
 <script>
     $(document).ready(function () {
 
-        axios.get('/vmf/md5/{{ axios_ }}')
+        axios.get('/vmf/md5/{{ _get }}')
                 .then(function (rsp) {
 
                     var urls = rsp.data.urls;

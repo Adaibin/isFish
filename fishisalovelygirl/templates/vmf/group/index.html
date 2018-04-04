@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Index Group</title>
 </head>
 <body>
 <div id="foot">
@@ -14,7 +14,7 @@
 <script>
     $(document).ready(function () {
 
-        axios.get('/vmf/md5/{{ axios_ }}')
+        axios.get('/vmf/md5/{{ _get }}')
                 .then(function (rsp) {
 
                     var urls = rsp.data.urls;
