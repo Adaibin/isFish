@@ -10,7 +10,7 @@
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
     <script src="./static/fish-js/axios.min.js"></script>
-    <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
+    <!--<script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>-->
 </head>
 <body>
 <div class="container">
@@ -35,14 +35,14 @@
 
 <script>
     $(document).ready(function () {
-        window.WwLogin({
-            "id": "wx_reg",
-            "appid": "wx7cc2586b6e9016a7",
-            "agentid": "1000002",
-            "redirect_uri": "http://xn--viqv0at04j.xn--6qq986b3xl/todo.html",
-            "state": "",
-            "href": "",
-        });
+//        window.WwLogin({
+//            "id": "wx_reg",
+//            "appid": "wx7cc2586b6e9016a7",
+//            "agentid": "1000002",
+//            "redirect_uri": "http://xn--viqv0at04j.xn--6qq986b3xl/todo.html",
+//            "state": "",
+//            "href": "",
+//        });
         axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpidwx7cc2586b6e9016a7=&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ')
                 .then(function (rsp) {
 
