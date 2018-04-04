@@ -1,26 +1,18 @@
 # -*- coding: utf-8 -*-
 """properties"""
 from flask import jsonify
-from flask import jsonify
 from flask import Blueprint
-from flask import request
-from flask import redirect
 from flask import render_template
-from flask import make_response
-from flask import session as fs
-from flask_restful import Resource
-
-from functions import url_to_md5
 from vmf.user.model import User
 from vmf.group.model import Group
 from vmf.properties.model import Properties
-from app import cache
+from app import lg
 
 bp_properties = Blueprint('bp_properties', __name__, template_folder='templates/')
 
 
-class RequestMd5(object):
-    """RequestMd5
+class ViewProperties(object):
+    """ViewProperties
     """
 
     def __init__(self):
@@ -28,29 +20,35 @@ class RequestMd5(object):
                       '/vmf/properties/create': self.index,
                       '/vmf/properties/detail': self.index,
                       '/vmf/properties/modify': self.index,
-                      '/vmf/properties/delete': self.index}
+                      '/vmf/properties/delete': self.index,
+                      '/vmf/properties/index-get': self.index_get,
+                      '/vmf/properties/create-get': self.create_get,
+                      '/vmf/properties/detail-get': self.detail_get,
+                      '/vmf/properties/modify-get': self.modify_get,
+                      '/vmf/properties/delete-get': self.delete_get
+                      }
 
     def get(self, url):
         """get
         """
-        self._dict[url](url)
+        return self._dict[url](url)
 
     @staticmethod
     def index(url):
         """index
         """
-        axios_ = url_to_md5('-'.join((url, 'get')))
+        axios_ = lg.md5s['-'.join((url, 'get'))]
         return render_template(''.join((url, '.html')), **locals())
 
     @staticmethod
-    def index_get():
+    def index_get(*args):
         """index
         """
-        u1 = url_to_md5('/vmf/properties/create')
+        u1 = lg.md5s['/vmf/properties/create']
         return jsonify({'urls': [u1, ]})
 
     @staticmethod
-    def create_get():
+    def create_get(*args):
         """index
         """
 
@@ -62,7 +60,7 @@ class RequestMd5(object):
             """
             return table.__table__.columns._data._list
 
-        u1 = url_to_md5('/vmf/properties/index')
+        u1 = lg.md5s['/vmf/properties/index']
 
         return jsonify({'tables': sorted(['User', 'Group', 'Properties']),
                         'fields': {'User': func_(User),
@@ -71,44 +69,19 @@ class RequestMd5(object):
                         'urls': [u1, ]})
 
     @staticmethod
-    def detail_get():
+    def detail_get(*args):
         """index
         """
         pass
 
     @staticmethod
-    def modify_get():
+    def modify_get(*args):
         """index
         """
         pass
 
     @staticmethod
-    def delete_get():
+    def delete_get(*args):
         """index
-        """
-        pass
-
-
-class PropertiesRes(Resource):
-    """PropertiesRes
-    """
-
-    def get(self):
-        """get
-        """
-        pass
-
-    def put(self):
-        """put
-        """
-        pass
-
-    def post(self):
-        """post
-        """
-        pass
-
-    def delete(self):
-        """delete
         """
         pass

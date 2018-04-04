@@ -1,85 +1,87 @@
 # -*- coding: utf-8 -*-
 """group"""
-import json
-
-from flask import Blueprint
 from flask import jsonify
+from flask import Blueprint
 from flask import render_template
-from flask import session as f_session
-from flask_restful import Resource
+from vmf.user.model import User
+from vmf.group.model import Group
+from vmf.properties.model import Properties
+from app import lg
+
+bp_group = Blueprint('bp_group', __name__, template_folder='templates/')
 
 
-bp_group = Blueprint('bp_group', __name__, template_folder='jinja2_')
-
-
-@bp_group.route('/group/index',
-                methods=['GET'],
-                endpoint='index-get')
-def index(request):
+class ViewGroup(object):
+    """ViewGroup
     """
 
-    :param request:
-    :return:
-    """
-    return HttpResponse("group index.")
+    def __init__(self):
+        self._dict = {'/vmf/group/index': self.index,
+                      '/vmf/group/create': self.index,
+                      '/vmf/group/detail': self.index,
+                      '/vmf/group/modify': self.index,
+                      '/vmf/group/delete': self.index,
+                      '/vmf/group/index-get': self.index_get,
+                      '/vmf/group/create-get': self.create_get,
+                      '/vmf/group/detail-get': self.detail_get,
+                      '/vmf/group/modify-get': self.modify_get,
+                      '/vmf/group/delete-get': self.delete_get
+                      }
 
-
-def create(request):
-    """
-
-    :param request:
-    :return:
-    """
-    return HttpResponse("group create.")
-
-
-def detail(request):
-    """
-
-    :param request:
-    :return:
-    """
-    return HttpResponse("group detail.")
-
-
-def modify(request):
-    """
-
-    :param request:
-    :return:
-    """
-    return HttpResponse("group modify.")
-
-
-def delete(request):
-    """
-
-    :param request:
-    :return:
-    """
-    return HttpResponse("group delete.")
-
-
-class GroupRes(Resource):
-    """PropertiesRes
-    """
-
-    def get(self):
+    def get(self, url):
         """get
         """
-        pass
+        return self._dict[url](url)
 
-    def put(self):
-        """put
+    @staticmethod
+    def index(url):
+        """index
+        """
+        axios_ = lg.md5s['-'.join((url, 'get'))]
+        return render_template(''.join((url, '.html')), **locals())
+
+    @staticmethod
+    def index_get(*args):
+        """index
+        """
+        u1 = lg.md5s['/vmf/group/create']
+        return jsonify({'urls': [u1, ]})
+
+    @staticmethod
+    def create_get(*args):
+        """index
+        """
+
+        def func_(table):
+            """
+            get table's columns
+            :param table:
+            :return:
+            """
+            return table.__table__.columns._data._list
+
+        u1 = lg.md5s['/vmf/group/index']
+
+        return jsonify({'tables': sorted(['User', 'Group', 'Properties']),
+                        'fields': {'User': func_(User),
+                                   'Group': func_(Group),
+                                   'Properties': func_(Properties)},
+                        'urls': [u1, ]})
+
+    @staticmethod
+    def detail_get(*args):
+        """index
         """
         pass
 
-    def post(self):
-        """post
+    @staticmethod
+    def modify_get(*args):
+        """index
         """
         pass
 
-    def delete(self):
-        """delete
+    @staticmethod
+    def delete_get(*args):
+        """index
         """
         pass
