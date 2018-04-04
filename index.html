@@ -43,7 +43,7 @@
 //            "state": "",
 //            "href": "",
 //        });
-        axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpidwx7cc2586b6e9016a7=&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ')
+        axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ')
                 .then(function (rsp) {
                     var access_token = rsp.data.access_token;
                     console.log(access_token);
