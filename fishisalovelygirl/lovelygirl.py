@@ -15,39 +15,26 @@ from flask_sqlalchemy_session import flask_scoped_session
 
 from app import lg
 from blueprints import register_bp
-from blueprints import urls
-from vmf.properties.views import ViewProperties
-from vmf.user.views import ViewUser
-from vmf.group.views import ViewGroup
-from vmf.log.views import ViewLog
-from vmf.m2.views import ViewM2
-from vmf.m3.views import ViewM3
-from vmf.m4.views import ViewM4
-from vmf.m5.views import ViewM5
-from vmf.m6.views import ViewM6
-from vmf.m7.views import ViewM7
-from vmf.m8.views import ViewM8
-from vmf.m9.views import ViewM9
+from vmf.properties.views import PropertiesView
+from vmf.user.views import UserView
+from vmf.group.views import GroupView
+from vmf.log.views import LogView
 from vmf.log.model import Log
 from functions import get_md5s
 from mysql_engine import session_factory
 
+urls = GroupView.urls \
+       + UserView.urls \
+       + PropertiesView.urls \
+       + LogView.urls
 
 register_bp(lg)
 flask_session = flask_scoped_session(session_factory, lg)
 
-views = {'properties': ViewProperties,
-         'user': ViewUser,
-         'group': ViewGroup,
-         'log': ViewLog,
-         'm2': ViewM2,
-         'm3': ViewM3,
-         'm4': ViewM4,
-         'm5': ViewM5,
-         'm6': ViewM6,
-         'm7': ViewM7,
-         'm8': ViewM8,
-         'm9': ViewM9}
+views = {'properties': PropertiesView,
+         'user': UserView,
+         'group': GroupView,
+         'log': LogView}
 
 
 @lg.before_request
@@ -82,6 +69,7 @@ def visit_md5(md5):
         return redirect('/')
 
     url = lg.urls[md5] if md5 in lg.urls else lg.urls_pre[md5]
+    view = views[url.split('/')[2]]
 
     if request.method == 'POST' and urls[url]:
         # create log
@@ -94,7 +82,7 @@ def visit_md5(md5):
         current_session.commit()
 
         g.log_id = log.id
-        g.form = urls[url]()
+        g.form = view.form[url]()
 
         if not g.form.validate():
             message = ' '.join([', '.join(er) for er in g.form.errors.values()])
@@ -105,7 +93,6 @@ def visit_md5(md5):
                 update({'results': results})
             return jsonify(results)
 
-    view = views[url.split('/')[2]]
     return view().get(url)
 
 
@@ -127,19 +114,7 @@ def ylp_get():
     return jsonify({'urls': [md5s['/vmf/user/index'],
                              md5s['/vmf/group/index'],
                              md5s['/vmf/properties/index'],
-
                              md5s['/vmf/log/index'],
-                             md5s['/vmf/m2/index'],
-
-                             md5s['/vmf/m3/index'],
-                             md5s['/vmf/m4/index'],
-                             md5s['/vmf/m5/index'],
-
-                             md5s['/vmf/m6/index'],
-                             md5s['/vmf/m7/index'],
-                             md5s['/vmf/m8/index'],
-
-                             md5s['/vmf/m9/index'],
                              ]})
 
 

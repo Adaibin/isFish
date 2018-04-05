@@ -5,47 +5,45 @@ from flask import jsonify
 from flask import Blueprint
 from flask import render_template
 from app import lg
+from functions import View
 
 from vmf.group.model import Group
 from vmf.user.model import User
 from vmf.properties.model import Properties
 
 bp_properties = Blueprint('bp_properties', __name__, template_folder='templates/')
+module = '属性'
 
 
-class ViewProperties(object):
+class ViewProperties(View):
     """ViewProperties
     """
+    urls = ('/vmf/properties/index',
+            '/vmf/properties/create',
+            '/vmf/properties/detail',
+            '/vmf/properties/modify',
+            '/vmf/properties/delete',
+            '/vmf/properties/index_get',
+            '/vmf/properties/create_get',
+            '/vmf/properties/detail_get',
+            '/vmf/properties/modify_get',
+            '/vmf/properties/delete_get',
+            '/vmf/properties/index_post',
+            '/vmf/properties/create_post',
+            '/vmf/properties/detail_post',
+            '/vmf/properties/modify_post',
+            '/vmf/properties/delete_post')
+
+    form = {'/vmf/properties/index_post': '',
+            '/vmf/properties/create_post': '',
+            '/vmf/properties/detail_post': '',
+            '/vmf/properties/modify_post': '',
+            '/vmf/properties/delete_post': ''}
+
+    name = dict([(url, View.f_(url, View.types) + module) for url in urls])
 
     def __init__(self):
-        self._dict = {'/vmf/properties/index': self.index,
-                      '/vmf/properties/create': self.index,
-                      '/vmf/properties/detail': self.index,
-                      '/vmf/properties/modify': self.index,
-                      '/vmf/properties/delete': self.index,
-                      '/vmf/properties/index-get': self.index_get,
-                      '/vmf/properties/create-get': self.create_get,
-                      '/vmf/properties/detail-get': self.detail_get,
-                      '/vmf/properties/modify-get': self.modify_get,
-                      '/vmf/properties/delete-get': self.delete_get,
-                      '/vmf/properties/index-post': self.index_post,
-                      '/vmf/properties/create-post': self.create_post,
-                      '/vmf/properties/detail-post': self.detail_post,
-                      '/vmf/properties/modify-post': self.modify_post,
-                      '/vmf/properties/delete-post': self.delete_post
-                      }
-
-    def get(self, url):
-        """get
-        """
-        return self._dict[url](url)
-
-    @staticmethod
-    def index(url):
-        """index
-        """
-        _get = lg.md5s['-'.join((url, 'get'))]
-        return render_template(''.join((url, '.html')), **locals())
+        super(ViewProperties, self).__init__()
 
     @staticmethod
     def index_get(*args):
@@ -67,7 +65,7 @@ class ViewProperties(object):
             """
             return table.__table__.columns._data._list
 
-        u1 = lg.md5s['/vmf/properties/create-post']
+        u1 = lg.md5s['/vmf/properties/create_post']
         u2 = lg.md5s['/vmf/properties/index']
 
         return jsonify({'tables': sorted(['User', 'Properties', 'Properties']),
@@ -124,3 +122,9 @@ class ViewProperties(object):
         """delete
         """
         pass
+
+
+class PropertiesView(ViewProperties):
+    """ViewProperties_
+    """
+    maps = dict([(u, getattr(ViewProperties, u.split('/')[-1])) for u in ViewProperties.urls])

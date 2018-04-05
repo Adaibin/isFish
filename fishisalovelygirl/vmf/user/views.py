@@ -7,6 +7,7 @@ from app import lg
 from functions import View
 
 bp_user = Blueprint('bp_user', __name__, template_folder='templates/')
+module = '用户'
 
 
 @bp_user.route('/vmf/user/detail/<int:id_>',
@@ -18,26 +19,32 @@ def detail(id_):
 class ViewUser(View):
     """ViewUser
     """
+    urls = ('/vmf/user/index',
+            '/vmf/user/create',
+            '/vmf/user/detail',
+            '/vmf/user/modify',
+            '/vmf/user/delete',
+            '/vmf/user/index_get',
+            '/vmf/user/create_get',
+            '/vmf/user/detail_get',
+            '/vmf/user/modify_get',
+            '/vmf/user/delete_get',
+            '/vmf/user/index_post',
+            '/vmf/user/create_post',
+            '/vmf/user/detail_post',
+            '/vmf/user/modify_post',
+            '/vmf/user/delete_post')
+
+    form = {'/vmf/user/index_post': '',
+            '/vmf/user/create_post': '',
+            '/vmf/user/detail_post': '',
+            '/vmf/user/modify_post': '',
+            '/vmf/user/delete_post': ''}
+
+    name = dict([(url, View.f_(url, View.types) + module) for url in urls])
 
     def __init__(self):
         super(ViewUser, self).__init__()
-
-        self._dict = {'/vmf/user/index': self.index,
-                      '/vmf/user/create': self.index,
-                      '/vmf/user/detail': self.index,
-                      '/vmf/user/modify': self.index,
-                      '/vmf/user/delete': self.index,
-                      '/vmf/user/index-get': self.index_get,
-                      '/vmf/user/create-get': self.create_get,
-                      '/vmf/user/detail-get': self.detail_get,
-                      '/vmf/user/modify-get': self.modify_get,
-                      '/vmf/user/delete-get': self.delete_get,
-                      '/vmf/user/index-post': self.index_post,
-                      '/vmf/user/create-post': self.create_post,
-                      '/vmf/user/detail-post': self.detail_post,
-                      '/vmf/user/modify-post': self.modify_post,
-                      '/vmf/user/delete-post': self.delete_post
-                      }
 
     @staticmethod
     def index_get(*args):
@@ -50,7 +57,7 @@ class ViewUser(View):
     def create_get(*args):
         """create
         """
-        u1 = lg.md5s['/vmf/user/create-post']
+        u1 = lg.md5s['/vmf/user/create_post']
         u2 = lg.md5s['/vmf/user/index']
 
         return jsonify({'urls': [u1, u2]})
@@ -105,3 +112,9 @@ class ViewUser(View):
         """delete
         """
         pass
+
+
+class UserView(ViewUser):
+    """UserView
+    """
+    maps = dict([(u, getattr(ViewUser, u.split('/')[-1])) for u in ViewUser.urls])

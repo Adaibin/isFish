@@ -44,21 +44,55 @@ def wrap_dict(dict_):
 class View(object):
     """View
     """
+    types = {'index': '索引', 'create': '创建', 'detail': '详情',
+             'modify': '修改', 'delete': '删除'}
 
     def __init__(self):
         self._dict = {}
 
+    @staticmethod
+    def f_(u, types_):
+        for k in types_:
+            if k in u:
+                return types_[k]
+        raise ValueError('No match type in: %s' % u)
+
     def get(self, url):
         """get
         """
-        return self._dict[url](url)
+        f = self.maps[url]
+        return f(url)
 
     @staticmethod
     def index(url):
         """index
         """
-        _get = lg.md5s['-'.join((url, 'get'))]
+        _get = lg.md5s['_'.join((url, 'get'))]
         return render_template(''.join((url, '.html')), **locals())
+
+    @staticmethod
+    def create(url):
+        """index
+        """
+        return View.index(url)
+
+    @staticmethod
+    def detail(url):
+        """detail
+        """
+        return View.index(url)
+
+    @staticmethod
+    def modify(url):
+        """modify
+        """
+        return View.index(url)
+
+    @staticmethod
+    def delete(url):
+        """delete
+        """
+        return View.index(url)
 
     @staticmethod
     def update_log(results):
