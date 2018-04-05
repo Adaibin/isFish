@@ -5,6 +5,7 @@ from vmf.properties.views import bp_properties
 from vmf.group.views import bp_group
 from vmf.user.views import bp_user
 from vmf.group.forms import GroupCreateForm
+from vmf.initial.views import bp_initial
 
 
 def register_bp(app_):
@@ -15,6 +16,7 @@ def register_bp(app_):
     app_.register_blueprint(bp_group)
     #
     app_.register_blueprint(bp_user)
+    app_.register_blueprint(bp_initial)
 
 
 urls = {'/vmf/properties/index': '',

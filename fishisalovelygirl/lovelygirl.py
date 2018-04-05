@@ -20,7 +20,6 @@ from vmf.properties.views import ViewProperties
 from vmf.user.views import ViewUser
 from vmf.group.views import ViewGroup
 from vmf.log.views import ViewLog
-from vmf.m1.views import ViewM1
 from vmf.m2.views import ViewM2
 from vmf.m3.views import ViewM3
 from vmf.m4.views import ViewM4
@@ -41,7 +40,6 @@ views = {'properties': ViewProperties,
          'user': ViewUser,
          'group': ViewGroup,
          'log': ViewLog,
-         'm1': ViewM1,
          'm2': ViewM2,
          'm3': ViewM3,
          'm4': ViewM4,
@@ -131,7 +129,6 @@ def ylp_get():
                              md5s['/vmf/properties/index'],
 
                              md5s['/vmf/log/index'],
-                             md5s['/vmf/m1/index'],
                              md5s['/vmf/m2/index'],
 
                              md5s['/vmf/m3/index'],

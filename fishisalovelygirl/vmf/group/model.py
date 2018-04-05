@@ -19,16 +19,19 @@ class Group(Base):
 
     id = Column(Integer, primary_key=True)
     version = Column(Integer, default=1)
-    # 组名
-    name = Column(String(20), unique=True, nullable=False)
-    # 权限
+    #
+    name = Column(String(32), unique=True, nullable=False)
+    #
     permissions = Column(Text)
-    # 组用户
+    #
+    tag = Column(String(16), nullable=False)
+    #
     users = relationship('User', back_populates='group')
 
 
 def init_tables():
-    """创建表"""
+    """init tables
+    """
     Base.metadata.create_all(bind=engine)
 
 

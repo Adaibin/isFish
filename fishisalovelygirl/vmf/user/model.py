@@ -19,7 +19,12 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     version = Column(Integer, default=1)
 
+    w_id = Column(String(16), unique=True, nullable=False)
+    password = Column(String(64), nullable=False)
+
     name = Column(String(20), nullable=False)
+
+    email = Column(String(64), unique=True, nullable=False)
 
     group_id = Column(Integer, ForeignKey('group.id'))
 

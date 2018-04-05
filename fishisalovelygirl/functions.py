@@ -33,6 +33,14 @@ def get_md5s(list_):
     return _md5s, _urls
 
 
+def wrap_dict(dict_):
+    """
+    wrap dict
+    :param dict_:
+    """
+    return dict([(k, dict_[k].strip())for k in dict_])
+
+
 class View(object):
     """View
     """
