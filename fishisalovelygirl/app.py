@@ -34,6 +34,7 @@ def create_app():
 
 
 lg = create_app()
-cache = Cache(lg, config={'CACHE_TYPE': 'redis',
-                          'host': '127.0.0.1',
-                          'port': '6379'})
+cache = None
+# cache = Cache(lg, config={'CACHE_TYPE': 'redis',
+#                           'host': '127.0.0.1',
+#                           'port': '6379'})

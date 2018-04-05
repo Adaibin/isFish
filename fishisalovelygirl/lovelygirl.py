@@ -71,7 +71,7 @@ def after(response):
 
 @lg.route('/vmf/md5/<string:md5>',
           methods=['GET', 'POST'], endpoint='md5')
-@login_required
+# @login_required
 def visit_md5(md5):
     """
     visit by md5
@@ -144,4 +144,4 @@ def ylp_get():
 
 
 if __name__ == '__main__':
-    lg.run(host='192.168.4.214', port=9755, threaded=True)
+    lg.run(host='172.20.10.6', port=9755, threaded=True)

@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3830f6e3-c636-4e82-87f5-b97b121b9eb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/initial/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m1/create.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m1/detail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m1/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m1/modify.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/m1/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/m1/model.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/m1/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/app.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/blueprints.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/blueprints.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/functions.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/functions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/fishisalovelygirl/static/css/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/index.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/create.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/index.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/group/model.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/vmf/group/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m0/create.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m0/detail.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/detail.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m0/index.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/m0/modify.html" afterPath="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/modify.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fishisalovelygirl/vmf/m1/__init__.py" afterPath="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/__init__.py" />
     </list>
     <ignored path="fish.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,6 +28,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/fish$lovelygirl.coverage" NAME="lovelygirl Coverage Results" MODIFIED="1522918964331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fishisalovelygirl" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -46,72 +40,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/functions.py">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-              <folding>
-                <element signature="e#40#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-              <folding>
-                <element signature="e#38#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lovelygirl.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
-              <folding>
-                <element signature="e#1866#1923#1" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/initial/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding>
-                <element signature="e#39#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="144">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/initial/index.html">
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="161" column="11" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
+            <state relative-caret-position="228">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blueprints.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/blueprints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
               <folding>
-                <marker date="1522917174787" expanded="false" signature="4423:4441" placeholder="..." />
+                <element signature="e#42#88#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,8 +95,48 @@
       <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="107" column="11" selection-start-line="99" selection-start-column="8" selection-end-line="107" selection-end-column="11" />
+            <state relative-caret-position="231">
+              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ylp.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -153,21 +169,30 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/background/model.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/create.html" />
-        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/login.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/background/views.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/index.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/background/forms.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/model.py" />
-        <option value="$PROJECT_DIR$/fishisalovelygirl/blueprints.py" />
-        <option value="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
-        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/functions.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/group/model.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/forms.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/initial/index.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/app.py" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/blueprints.py" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/index.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/create.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/index.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html" />
+        <option value="$PROJECT_DIR$/fishisalovelygirl/static/css/bootstrap.min.css" />
       </list>
     </option>
   </component>
@@ -254,11 +279,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/fishisalovelygirl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -268,13 +295,7 @@
       <recent name="G:\fish\fishisalovelygirl\templates\user" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.create.html (1)">
-    <configuration default="false" name="create.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fish/fishisalovelygirl/templates/user/create.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="create.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fish/templates/vmf/group/create.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.lovelygirl">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -295,7 +316,13 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeWebKit" factoryName="NW.js">
       <method />
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
@@ -326,7 +353,43 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
+      <module name="" />
+      <option name="PORT" value="0" />
+      <option name="HOST" value="null" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list />
+        </option>
+      </PathMappingSettings>
+      <option name="REDIRECT_OUTPUT" value="true" />
+      <option name="SUSPEND_AFTER_CONNECT" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="fish" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.PyramidServer" factoryName="Pyramid server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -339,7 +402,26 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="fish" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="CONFIGURATION_FILE" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fishisalovelygirl" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="fish" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -355,6 +437,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="fish" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+      <force value="false" />
+      <verbose value="false" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -483,16 +572,27 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.create.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.create.html (1)" />
+    <configuration default="false" name="lovelygirl" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fishisalovelygirl" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="fish" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.lovelygirl" />
     </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.create.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.create.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -592,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522867964001</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add">
+      <created>1522917200543</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1522917200543</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -604,14 +711,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29037037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18034056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50074077" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -636,37 +743,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/properties/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/properties/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/user/detail.html" />
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/user/index.html" />
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/user/modify.html" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/user/create.html" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/user/urls.py" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/urls.py" />
@@ -689,16 +771,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/settings.py" />
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/mysql_engine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="15" />
-          <folding>
-            <element signature="e#59#74#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/sqlite_engine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -714,29 +786,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/properties/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/log/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#35#58#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="171" selection-start-line="10" selection-start-column="171" selection-end-line="10" selection-end-column="171" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CNAME">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -824,34 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -868,14 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -914,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/blueprints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#42#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/user/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -938,16 +942,6 @@
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding>
             <element signature="e#40#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
-          <folding>
-            <element signature="e#1866#1923#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,30 +964,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py">
+    <entry file="file://D:/Lib/site-packages/flask_cache/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="107" column="11" selection-start-line="99" selection-start-column="8" selection-end-line="107" selection-end-column="11" />
+        <state relative-caret-position="124">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/initial/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="161" column="11" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
+        <state relative-caret-position="270">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding>
             <marker date="1522917174787" expanded="false" signature="4423:4441" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/mysql_engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#59#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1281">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#1868#1925#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="171" selection-start-line="10" selection-start-column="171" selection-end-line="10" selection-end-column="171" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+          <folding>
+            <marker date="1522917725457" expanded="true" signature="987:1101" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/properties/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/properties/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="4" column="120989" selection-start-line="4" selection-start-column="120989" selection-end-line="4" selection-end-column="120989" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/ylp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/blueprints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding>
+            <element signature="e#42#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
