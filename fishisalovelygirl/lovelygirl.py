@@ -9,6 +9,7 @@ from flask import jsonify
 from flask import request
 from flask import redirect
 from flask import session as fs
+from flask.ext.login import logout_user
 from flask_login import login_required
 from flask_sqlalchemy_session import current_session
 from flask_sqlalchemy_session import flask_scoped_session
@@ -16,12 +17,14 @@ from flask_sqlalchemy_session import flask_scoped_session
 from app import lg
 from blueprints import register_bp
 from vmf.properties.views import PropertiesView
+from vmf.user.model import User
 from vmf.user.views import UserView
 from vmf.group.views import GroupView
 from vmf.log.views import LogView
 from vmf.log.model import Log
 from functions import get_md5s
 from mysql_engine import session_factory
+from app import login_manager
 
 urls = GroupView.urls \
        + UserView.urls \
@@ -29,6 +32,7 @@ urls = GroupView.urls \
        + LogView.urls
 
 register_bp(lg)
+
 flask_session = flask_scoped_session(session_factory, lg)
 
 views = {'properties': PropertiesView,
@@ -56,9 +60,33 @@ def after(response):
     return response
 
 
+@login_manager.unauthorized_handler
+def unauthorized():
+    """unauthorized
+    """
+    return redirect('/')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    """load user
+    """
+    return current_session.query(User).\
+        filter_by(id=user_id).first()
+
+
+@lg.route("/sign_out")
+@login_required
+def sign_out():
+    """sign out
+    """
+    logout_user()
+    return redirect('/')
+
+
 @lg.route('/vmf/md5/<string:md5>',
           methods=['GET', 'POST'], endpoint='md5')
-# @login_required
+@login_required
 def visit_md5(md5):
     """
     visit by md5
@@ -71,7 +99,7 @@ def visit_md5(md5):
     url = lg.urls[md5] if md5 in lg.urls else lg.urls_pre[md5]
     view = views[url.split('/')[2]]
 
-    if request.method == 'POST' and urls[url]:
+    if request.method == 'POST' and view.form[url]:
         # create log
         log_data = {'user_id': fs['user_id'],
                     'time_': datetime.now(),
@@ -119,4 +147,4 @@ def ylp_get():
 
 
 if __name__ == '__main__':
-    lg.run(host='172.20.10.6', port=9755, threaded=True)
+    lg.run(host='192.168.4.214', port=9755, threaded=True)

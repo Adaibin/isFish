@@ -4,6 +4,8 @@ from flask import g
 from flask import jsonify
 from flask import Blueprint
 from flask import render_template
+
+from vmf.group.forms import GroupCreateForm
 from app import lg
 from functions import View
 
@@ -32,7 +34,7 @@ class ViewGroup(View):
             '/vmf/group/delete_post')
 
     form = {'/vmf/group/index_post': '',
-            '/vmf/group/create_post': '',
+            '/vmf/group/create_post': GroupCreateForm,
             '/vmf/group/detail_post': '',
             '/vmf/group/modify_post': '',
             '/vmf/group/delete_post': ''}

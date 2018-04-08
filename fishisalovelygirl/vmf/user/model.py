@@ -20,7 +20,7 @@ class User(Base):
     version = Column(Integer, default=1)
 
     w_id = Column(String(16), unique=True, nullable=False)
-    password = Column(String(64), nullable=False)
+    password = Column(String(64))
 
     name = Column(String(20), nullable=False)
 

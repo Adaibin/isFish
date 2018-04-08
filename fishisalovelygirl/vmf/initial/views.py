@@ -15,6 +15,8 @@ bp_initial = Blueprint('bp_initial', __name__, template_folder='templates/')
 @bp_initial.route('/vmf/initial/index',
                   methods=['GET'], endpoint='index')
 def index():
+    """index
+    """
     admin_group = current_session.query(Group). \
         filter_by(tag='admin').first()
     valid = False
@@ -38,6 +40,9 @@ def index():
 @bp_initial.route('/vmf/initial/create',
                   methods=['POST'], endpoint='create')
 def create():
+    """create
+    """
+
     form = InitialCreateForm()
     if not form.validate():
         message = ' '.join([', '.join(er) for er in form.errors.values()])
@@ -46,11 +51,11 @@ def create():
     data = form.data_parser()
     try:
         group = Group(**{'name': data['group_name'],
-                         'tag': data['tag'],
+                         'tag': data['group_tag'],
                          'permissions': 'all'})
         current_session.add(group)
-        current_session.refresh()
         current_session.commit()
+        current_session.refresh(group)
 
         user = User(**{'name': data['user_name'],
                        'password': data['password'],
@@ -58,8 +63,8 @@ def create():
                        'email': data['email'],
                        'group_id': group.id})
         current_session.add(user)
-        current_session.refresh()
         current_session.commit()
+        current_session.refresh(user)
         return jsonify({'status': True, 'message': 'Create success.'})
     except Exception as e:
         results = {'status': False, 'message': str(e)}

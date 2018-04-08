@@ -21,10 +21,6 @@ class Log(Base):
     version = Column(Integer, default=1)
     # 组名
     name = Column(String(20), unique=True, nullable=False)
-    # 权限
-    permissions = Column(Text)
-    # 组用户
-    users = relationship('User', back_populates='group')
 
 
 def init_tables():

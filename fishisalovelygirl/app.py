@@ -5,9 +5,12 @@ from flask import Flask
 from werkzeug.datastructures import ImmutableDict
 from flask_wtf.csrf import CSRFProtect
 from flask.ext.cache import Cache
-
+from flask_login import LoginManager
 
 SECRET_KEY = 'V4zdc5UTM6eWa8C2qgYRt0su7oiFwSrN'
+
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
 
 
 def create_app():
@@ -28,13 +31,15 @@ def create_app():
                           'WTF_CSRF_TIME_LIMIT': 14400})
     csrf = CSRFProtect()
     csrf.init_app(app_)
+
+    login_manager.init_app(app_)
     app_.__setattr__('csrf', csrf)
 
     return app_
 
 
 lg = create_app()
-cache = None
-# cache = Cache(lg, config={'CACHE_TYPE': 'redis',
-#                           'host': '127.0.0.1',
-#                           'port': '6379'})
+# cache = None
+cache = Cache(lg, config={'CACHE_TYPE': 'redis',
+                          'host': '127.0.0.1',
+                          'port': '6379'})
