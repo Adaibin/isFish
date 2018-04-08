@@ -23,6 +23,7 @@ Base = declarative_base()
 def to_dict(self):
     """SqlAlchemy instance to dict"""
     dict_ = {}
+
     for col in self.__table__.columns:
         val = getattr(self, col.name)
         val = str(val) if isinstance(val, (datetime.datetime, datetime.time)) else val

@@ -4,8 +4,10 @@ from flask import g
 from flask import jsonify
 from flask import Blueprint
 from flask import render_template
+from flask_sqlalchemy_session import current_session
 
 from vmf.group.forms import GroupCreateForm
+from vmf.group.model import Group
 from app import lg
 from functions import View
 
@@ -49,7 +51,11 @@ class ViewGroup(View):
         """index
         """
         u1 = lg.md5s['/vmf/group/create']
-        return jsonify({'urls': [u1, ]})
+        rows = current_session.query(Group).all()
+        rows = [row.to_dict() for row in rows]
+
+        return jsonify({'urls': [u1, ],
+                        'rows': rows, 'total': len(rows)})
 
     @staticmethod
     def create_get(*args):
