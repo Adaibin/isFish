@@ -79,9 +79,9 @@ def load_user(user_id):
         filter_by(id=user_id).first()
 
 
-@lg.route("/sign_out")
+@lg.route("/signout")
 @login_required
-def sign_out():
+def signout():
     """sign out
     """
     logout_user()
@@ -131,7 +131,7 @@ def visit_md5(md5):
 @lg.route('/', methods=['GET'], endpoint='signin')
 def signin():
     """
-    ylp
+    sign in
     """
     with open('templates/sign_in.html', encoding='utf-8') as f:
         return f.read()
@@ -140,21 +140,16 @@ def signin():
 @lg.route('/_get', methods=['GET'], endpoint='signin-get')
 def signin_get():
     """
-    ylp
+    sign in get
     """
-    md5s = lg.md5s
     token = generate_csrf()
-    return jsonify({'urls': [md5s['/vmf/user/index'],
-                             md5s['/vmf/group/index'],
-                             md5s['/vmf/properties/index'],
-                             md5s['/vmf/log/index'],],
-                    'token': token})
+    return jsonify({'token': token})
 
 
 @lg.route('/_post', methods=['POST'], endpoint='signin-post')
 def signin_post():
     """
-    ylp post
+    sign in post
     """
     form = SignInForm()
     if not form.validate():
@@ -168,15 +163,26 @@ def signin_post():
     return jsonify(results)
 
 
-@lg.route('/home',
-          methods=['GET'], endpoint='home')
+@lg.route('/home', methods=['GET'], endpoint='home')
 @login_required
 def home():
     """home
     """
-    with open('templates/sign_in.html', encoding='utf-8') as f:
+    with open('templates/home.html', encoding='utf-8') as f:
         return f.read()
 
+
+@lg.route('/home_get', methods=['GET'], endpoint='home-get')
+@login_required
+def home_get():
+    """
+    home get
+    """
+    md5s = lg.md5s
+    return jsonify({'urls': [md5s['/vmf/user/index'],
+                             md5s['/vmf/group/index'],
+                             md5s['/vmf/properties/index'],
+                             md5s['/vmf/log/index'], ]})
 
 if __name__ == '__main__':
     lg.run(host='192.168.4.214', port=9755, threaded=True)
