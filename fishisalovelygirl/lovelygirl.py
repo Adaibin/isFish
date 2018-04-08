@@ -10,7 +10,9 @@ from flask import request
 from flask import redirect
 from flask import session as fs
 from flask.ext.login import logout_user
+from flask.ext.wtf.csrf import generate_csrf
 from flask_login import login_required
+from flask_login import login_user
 from flask_sqlalchemy_session import current_session
 from flask_sqlalchemy_session import flask_scoped_session
 
@@ -25,6 +27,8 @@ from vmf.log.model import Log
 from functions import get_md5s
 from mysql_engine import session_factory
 from app import login_manager
+from vmf.user.forms import SignInForm
+
 
 urls = GroupView.urls \
        + UserView.urls \
@@ -124,26 +128,54 @@ def visit_md5(md5):
     return view().get(url)
 
 
-@lg.route('/', methods=['GET'], endpoint='YLP')
-def ylp():
+@lg.route('/', methods=['GET'], endpoint='signin')
+def signin():
     """
     ylp
     """
-    with open('templates/ylp.html', encoding='utf-8') as f:
+    with open('templates/sign_in.html', encoding='utf-8') as f:
         return f.read()
 
 
-@lg.route('/-get', methods=['GET'], endpoint='YLP-get')
-def ylp_get():
+@lg.route('/_get', methods=['GET'], endpoint='signin-get')
+def signin_get():
     """
     ylp
     """
     md5s = lg.md5s
+    token = generate_csrf()
     return jsonify({'urls': [md5s['/vmf/user/index'],
                              md5s['/vmf/group/index'],
                              md5s['/vmf/properties/index'],
-                             md5s['/vmf/log/index'],
-                             ]})
+                             md5s['/vmf/log/index'],],
+                    'token': token})
+
+
+@lg.route('/_post', methods=['POST'], endpoint='signin-post')
+def signin_post():
+    """
+    ylp post
+    """
+    form = SignInForm()
+    if not form.validate():
+        message = ' '.join([', '.join(er) for er in form.errors.values()])
+        results = {'status': False, 'message': message}
+        return jsonify(results)
+    row = current_session.query(User).\
+        filter_by(w_id=form.w_id.data).first()
+    login_user(row, remember=True, fresh=True)
+    results = {'status': True, 'message': 'Login success!'}
+    return jsonify(results)
+
+
+@lg.route('/home',
+          methods=['GET'], endpoint='home')
+@login_required
+def home():
+    """home
+    """
+    with open('templates/sign_in.html', encoding='utf-8') as f:
+        return f.read()
 
 
 if __name__ == '__main__':

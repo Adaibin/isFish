@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""组管理模块表验证"""
+"""initial"""
 from string import digits
 from string import ascii_letters
 from string import punctuation
@@ -16,7 +16,6 @@ from vmf.user.model import User
 
 class InitialCreateForm(FlaskForm):
     """Initial Create"""
-    NAME = '添加组'
 
     w_id = StringField('w_id',
                        [validators.required(message='w_id is require.'),
@@ -49,23 +48,31 @@ class InitialCreateForm(FlaskForm):
 
     @staticmethod
     def validate_group_name(_, field):
+        """validate group name
+        """
         if current_session.query(Group). \
                 filter_by(name=field.data).first():
             raise ValidationError('Group exist: (%s).' % field.data)
 
     @staticmethod
     def validate_email(_, field):
+        """validate email
+        """
         if current_session.query(User). \
                 filter_by(email=field.data).first():
             raise ValidationError('Group exist: (%s).' % field.data)
 
     @staticmethod
     def validate_w_id(_, field):
+        """validate w_id
+        """
         if current_session.query(User). \
                 filter_by(w_id=field.data).first():
             raise ValidationError('User exist: (%s).' % field.data)
 
     def validate_password(self, field):
+        """validate password
+        """
         if field.data != self.password_.data:
             raise ValidationError('Password does not match.')
         if len(field.data) > 12 or len(field.data) < 8:

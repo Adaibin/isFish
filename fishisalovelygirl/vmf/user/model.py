@@ -30,6 +30,33 @@ class User(Base):
 
     group = relationship('Group', back_populates='users')
 
+    @staticmethod
+    def is_authenticated():
+        """is authenticated
+        """
+        return True
+
+    def is_active(self):
+        """is active
+        """
+        return False if self.status == self.STATUS_BLOCK else True
+
+    @staticmethod
+    def is_anonymous():
+        """is anonymous
+        """
+        return False
+
+    def get_id(self):
+        """get_id
+        """
+        return self.id
+
+    def __repr__(self):
+        """__repr__
+        """
+        return self.name
+
 
 def init_tables():
     """创建表"""

@@ -1,0 +1,9 @@
+
+.navbar-menus > div > button:focus {
+    color: #666;
+}
+
+.navbar-menus > div > button:hover {
+    color: #333;
+}
+
