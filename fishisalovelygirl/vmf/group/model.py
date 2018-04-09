@@ -28,6 +28,17 @@ class Group(Base):
     #
     users = relationship('User', back_populates='group')
 
+    def get(self):
+        """get
+        """
+        data = {'id': self.id,
+                'version': self.version,
+                'name': self.name,
+                'permissions': self.permissions,
+                'tag': self.tag,
+                'users': [u.name for u in self.users]}
+        return data
+
 
 def init_tables():
     """init tables

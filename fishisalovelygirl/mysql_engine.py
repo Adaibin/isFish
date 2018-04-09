@@ -28,6 +28,10 @@ def to_dict(self):
         val = getattr(self, col.name)
         val = str(val) if isinstance(val, (datetime.datetime, datetime.time)) else val
         dict_[col.name] = val
+
+    # for key in self:
+    #     if isinstance(getattr(self, key), InstrumentedList):
+    #         pass
     return dict_
 
 

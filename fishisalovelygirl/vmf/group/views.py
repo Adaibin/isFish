@@ -51,8 +51,10 @@ class ViewGroup(View):
         """index
         """
         u1 = lg.md5s['/vmf/group/create']
-        rows = current_session.query(Group).all()
-        rows = [row.to_dict() for row in rows]
+        rows_ = current_session.query(Group).all()
+        rows = [row.to_dict() for row in rows_]
+        for x, item in enumerate(rows_):
+            rows[x]['users'] = item.users
 
         return jsonify({'urls': [u1, ],
                         'rows': rows, 'total': len(rows)})
