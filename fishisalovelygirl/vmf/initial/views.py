@@ -61,6 +61,8 @@ def create():
                        'password': data['password'],
                        'w_id': data['w_id'],
                        'email': data['email'],
+                       'role_apply': 'admin',
+                       'status': User.STATUS_ACTIVE,
                        'group_id': group.id})
         current_session.add(user)
         current_session.commit()

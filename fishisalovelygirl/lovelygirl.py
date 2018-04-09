@@ -61,6 +61,10 @@ def before():
 def after(response):
     """after
     """
+    if 'log_id' in g and g.log_id:
+        current_session.query(Log).\
+            filter_by(id=g.log_id).\
+            update({'message': g.after['message']})
     return response
 
 
@@ -104,25 +108,23 @@ def visit_md5(md5):
     view = views[url.split('/')[2]]
 
     if request.method == 'POST' and view.form[url]:
+        g.form = view.form[url]()
+
         # create log
         log_data = {'user_id': fs['user_id'],
                     'time_': datetime.now(),
                     'form': json.dumps(g.form.data)}
         log = Log(**log_data)
         current_session.add(log)
-        current_session.refresh()
         current_session.commit()
+        current_session.refresh(log)
 
         g.log_id = log.id
-        g.form = view.form[url]()
 
         if not g.form.validate():
             message = ' '.join([', '.join(er) for er in g.form.errors.values()])
             results = {'status': False, 'message': message}
-            # update log
-            current_session.query(Log).\
-                filter_by(id=g.log_id).\
-                update({'results': results})
+            g.after = results
             return jsonify(results)
 
     return view().get(url)

@@ -52,10 +52,7 @@ class ViewGroup(View):
         """
         u1 = lg.md5s['/vmf/group/create']
         rows_ = current_session.query(Group).all()
-        rows = [row.to_dict() for row in rows_]
-        for x, item in enumerate(rows_):
-            rows[x]['users'] = item.users
-
+        rows = [row.get(sn+1) for sn, row in enumerate(rows_)]
         return jsonify({'urls': [u1, ],
                         'rows': rows, 'total': len(rows)})
 
@@ -96,7 +93,12 @@ class ViewGroup(View):
         """create
         """
         form = g.form
-        return jsonify({'status': True, 'message': 'Create success!'})
+        group = form.data_parser()
+        current_session.add(Group(**group))
+        current_session.commit()
+        results = {'status': True, 'message': 'Create success!'}
+        g.after = results
+        return jsonify(results)
 
     @staticmethod
     def detail_post(*args):

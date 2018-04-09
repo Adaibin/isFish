@@ -7,6 +7,87 @@
     <link rel="stylesheet" href="/static/css/bootstrap-select.min.css">
 
     <style>
+        .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+            background-color: #1098F7;
+        }
+        .navbar-collapse {
+            background-color: #000000;
+            border-color: #e7e7e7;
+        }
+        .nav>li>a{
+            color: #ffffff;
+            background-color: #B89E97;
+        }
+        .nav>li>a:focus, .nav>li>a:hover, .nav>li>a:active{
+            background-color: #1098F7;
+        }
+
+        .nav>li>ul>li>a{
+            background-color: #ffffff;
+        }
+
+        .nav>li>ul>li>a:focus, .nav>li>ul>li>a:hover{
+            background-color: #1098F7;
+        }
+
+        .nav>li>a{
+            font-size: 1.5em;
+        }
+        .nav>li>ul>li>a{
+            font-size: 1.2em;
+            font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
+        }
+
+        .navbar{
+            margin-bottom: 0;
+        }
+
+        .create-btn{
+            color: #ffffff;
+            background-color: #E3D985;
+        }
+        .create-btn:hover{
+            color: #ffffff;
+            background-color: #e3c26a;
+        }
+
+        .home-btn{
+            color: #ffffff;
+            background-color: #1098F7;
+        }
+        .home-btn:hover{
+            color: #ffffff;
+            background-color: #0d44f7;
+        }
+
+        .modify-btn{
+            color: #ffffff;
+            background-color: #E57A44;
+        }
+
+        .modify-btn:hover{
+            color: #ffffff;
+            background-color: #e54624;
+        }
+
+        .detail-btn{
+            color: #ffffff;
+            background-color: #BCD8C1;
+        }
+        .detail-btn:hover{
+            color: #ffffff;
+            background-color: #8bd7d8;
+        }
+
+        .del-btn{
+            color: #ffffff;
+            background-color: #423740;
+        }
+        .del-btn:hover{
+            color: #ffffff;
+            background-color: #3d1f42;
+        }
+
         .add-panel .panel-heading {
             padding-bottom: 5px;
             border-top-width: 5px;
@@ -14,14 +95,12 @@
         }
 
         .add-panel .panel-title {
-            float: left;
+            float: right;
             padding-top: 5px;
         }
 
-        .add-panel #submit-btn {
-            float: right;
-            padding-left: 24px;
-            padding-right: 24px;
+        .add-panel .panel-button {
+            float: left;
         }
 
         .form-group {
@@ -33,7 +112,6 @@
             margin-bottom: 5px;
         }
 
-
     </style>
 </head>
 <body>
@@ -41,7 +119,10 @@
     <div class="panel-heading">
         <div class="text clearfix" style="text-align:center;">
             <h5 class="panel-title"><strong>Create Properties</strong></h5>
-            <button id="submit-btn" type="button" class="btn btn-info btn-sm">提交</button>
+            <div class="panel-button">
+                <a href="/home" class="home-btn btn">Home</a>
+                <button id="submit-btn" type="button" class="create-btn btn">Submit</button>
+            </div>
         </div>
     </div>
     <div class="panel-body">
@@ -70,7 +151,7 @@
     </div>
 </div>
 <div id="foot" style="margin-top: 20px;margin-left: 20px">
-    <a href="/" class="btn-danger btn">Home</a>
+    <a href="/home" class="btn-danger btn">Home</a>
     <a id="a-index" class="btn-success btn" href="">Index</a>
 </div>
 <script src="/static/js/jquery.min.js"></script>

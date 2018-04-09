@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""组管理模块表验证"""
-
+"""Group
+"""
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms import ValidationError
@@ -21,8 +21,23 @@ class GroupBaseForm(FlaskForm):
                        [validators.required(message='name is require.'),
                         validators.length(max=20,
                                           message="name's max len is 20.")])
+    tag = StringField('tag',
+                      [validators.required(message='tag is require.'),
+                       validators.length(max=16,
+                                         message="tag's max len is 16.")])
+
     permissions = StringField('permissions',
                               [validators.optional()])
+
+    @staticmethod
+    def validate_tag(_, field):
+        """
+        validate tag
+        :param _:
+        :param field:
+        """
+        if field.data not in Group.TAGS:
+            raise ValueError("tag's value is wrong.")
 
     @staticmethod
     def validate_permissions(_, field):

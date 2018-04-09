@@ -23,7 +23,8 @@ class Properties(Base):
 
 
 def init_tables():
-    """创建表"""
+    """create table
+    """
     Base.metadata.create_all(bind=engine)
 
 

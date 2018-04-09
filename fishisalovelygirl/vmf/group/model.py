@@ -17,6 +17,16 @@ class Group(Base):
 
     __tablename__ = 'group'
 
+    TAG_TEST = 'test'
+    TAG_DEV = 'dev'
+    TAG_OPS = 'ops'
+    TAG_DBA = 'dba'
+    TAG_PM = 'pm'
+    TAG_ADMIN = 'admin'
+
+    TAGS = (TAG_TEST, TAG_DEV, TAG_OPS, TAG_DBA,
+            TAG_PM, TAG_ADMIN)
+
     id = Column(Integer, primary_key=True)
     version = Column(Integer, default=1)
     #
@@ -28,10 +38,11 @@ class Group(Base):
     #
     users = relationship('User', back_populates='group')
 
-    def get(self):
+    def get(self, sn):
         """get
         """
-        data = {'id': self.id,
+        data = {'sn': sn,
+                'id': self.id,
                 'version': self.version,
                 'name': self.name,
                 'permissions': self.permissions,

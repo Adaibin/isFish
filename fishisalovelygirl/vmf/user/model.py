@@ -13,6 +13,8 @@ from mysql_engine import Base, engine
 
 class User(Base):
     """User"""
+    STATUS_BLOCK = 'block'
+    STATUS_ACTIVE = 'active'
 
     __tablename__ = 'user'
 
@@ -29,6 +31,26 @@ class User(Base):
     group_id = Column(Integer, ForeignKey('group.id'))
 
     group = relationship('Group', back_populates='users')
+
+    role_apply = Column(String(16), nullable=False)
+
+    status = Column(String(16), nullable=False, default=STATUS_BLOCK)
+
+    def get(self, sn):
+        """get
+        """
+        data = {'sn': sn,
+                'id': self.id,
+                'version': self.version,
+                'w_id': self.w_id,
+                'password': self.password,
+                'name': self.name,
+                'email': self.email,
+                'group': self.group.name,
+                'group_id': self.group_id,
+                'role_apply': self.role_apply,
+                'status': self.status}
+        return data
 
     @staticmethod
     def is_authenticated():
@@ -59,7 +81,8 @@ class User(Base):
 
 
 def init_tables():
-    """创建表"""
+    """create table
+    """
     Base.metadata.create_all(bind=engine)
 
 
