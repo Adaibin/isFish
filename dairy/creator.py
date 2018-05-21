@@ -82,4 +82,5 @@ def creator_(folder):
 
 
 for folder in folder_():
+    print(folder)
     creator_(folder)
