@@ -2,57 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ text.title }}</title>
-    <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+    <title>启程</title>
+    <link rel="shortcut icon" type="image" href="/static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="/static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/fish-css/index.css">
 
-    <script src="./static/fish-js/jquery.min.js"></script>
-    <script src="./static/fish-js/bootstrap.min.js"></script>
-    <script src="./static/fish-js/axios.min.js"></script>
-    <!--<script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>-->
+    <script src="/static/fish-js/jquery.min.js"></script>
+    <script src="/static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
+<audio id="audio" src="/static/fish-voice/启程.mp3" controls loop autoplay hidden></audio>
 <div class="container">
-    <div id="nav">
 
-    </div>
     <div class="content-bd" style="text-align: right">
-        {% for line in text.context %}
-        {% if line %}
-        <h1>{{ line }}</h1><br>
-        {% else %}
+        <br><strong><p style="font-size: 3em">启程</p></strong>
         <br>
-        {% endif %}
-        {% endfor %}
+        <h3>2018-03-07 10:03:30.893803</h3><br><br>
+        <span class="a-image"><img src="/static/fish-image/20180307100927.jpg"></span>
+        <br><br>
+        <h1>水木年华的《启程》</h1><br>
+
+        <h1>睡着放了整晚</h1><br>
+
+        <br><br>
+
+        <h1>人在叉口</h1><br>
+
+        <h1>难免感怀</h1><br>
+
+        <br><br>
+
+        <h1>有的事</h1><br>
+
+        <h1>尽力 仍有遗憾 这是现实</h1><br>
+
+        <br><br>
+
+        <h1>有的人</h1><br>
+
+        <h1>爱过 会有成长 乃是向往</h1><br>
+
+        <br><br>
+
+        <h1>2018-2021</h1><br>
+
+        <br><br>
+
+        <h1>重新启程 从心启程 从薪启程</h1><br>
+
+        <br><br>
+
+        <h1>三年一剑 劳资势要 薪资翻翻</h1><br>
+
+        <br>
         <!--<hr style=" height:3px;border:none;border-top:3px double #185598;"/>-->
     </div>
 </div>
 </body>
 
 
-<script src="./static/fish-js/index.js"></script>
+<script src="/static/fish-js/index.js"></script>
 
 <script>
     $(document).ready(function () {
-//        window.WwLogin({
-//            "id": "wx_reg",
-//            "appid": "wx7cc2586b6e9016a7",
-//            "agentid": "1000002",
-//            "redirect_uri": "http://xn--viqv0at04j.xn--6qq986b3xl/",
-//            "state": "",
-//            "href": "",
-//        });
-        axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ')
-                .then(function (rsp) {
-                    var access_token = rsp.data.access_token;
-                    alert(access_token);
 
-                })
-                .catch(function (error) {
-                    console.log(error);
-        });
-//        window.location.href = 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE'
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+
     })
 </script>
 </html>
