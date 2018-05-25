@@ -74,10 +74,11 @@ def creator_(folder):
                        error_correction=qrcode.constants.ERROR_CORRECT_M,
                        box_size=10,
                        border=30)
-
-    qr.add_data('%s/dairy/%s/%s.html' % (domain, folder, title))
+    url = '%s/dairy/%s/%s.html' % (domain, folder, title)
+    qr.add_data(url)
+    print(url)
     qr.make()
-    img = qr.make_image(fill_color="white", back_color="blue")
+    img = qr.make_image(fill_color="black", back_color="white")
     img.save(open('%s/%s.png' % (folder, title), 'wb'))
 
 
