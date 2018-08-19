@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3830f6e3-c636-4e82-87f5-b97b121b9eb4" name="Default" comment="" />
+    <list default="true" id="3830f6e3-c636-4e82-87f5-b97b121b9eb4" name="Default" comment="reinit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNAME" beforeDir="false" afterPath="$PROJECT_DIR$/CNAME" afterDir="false" />
+    </list>
     <ignored path="fish.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -23,7 +26,27 @@
     <favorites_list name="fish" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CNAME" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CNAME">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="823" column="59" selection-start-line="823" selection-start-column="59" selection-end-line="823" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +99,7 @@
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/log/create.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/index.html" />
         <option value="$PROJECT_DIR$/fishisalovelygirl/templates/vmf/group/create.html" />
+        <option value="$PROJECT_DIR$/CNAME" />
       </list>
     </option>
   </component>
@@ -122,7 +146,22 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="IsFish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IsFish" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IsFish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IsFish" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +323,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -416,8 +455,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.lovelygirl" />
-      <item itemvalue="Python.views" />
       <item itemvalue="Flask server.IsFish" />
+      <item itemvalue="Python.views" />
     </list>
     <recent_temporary>
       <list>
@@ -541,23 +580,38 @@
       <option name="project" value="LOCAL" />
       <updated>1522941268182</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="reinit">
+      <created>1534499359048</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1534499359048</updated>
+    </task>
+    <task id="LOCAL-00017" summary="reinit">
+      <created>1534499434798</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1534499434798</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="73" y="-7" width="1470" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3288889" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3288889" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2898773" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13456091" />
-      <window_info anchor="bottom" id="Docker" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13739377" />
+      <window_info anchor="bottom" id="Docker" order="8" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.17177914" />
@@ -567,9 +621,9 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="7" weight="0.3297546" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="7" weight="0.3297546" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +642,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
-    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <MESSAGE value="reinit" />
+    <option name="LAST_COMMIT_MESSAGE" value="reinit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,28 +665,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/mysql_script.py" />
-    <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/log/model.py" />
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.html" />
-    <entry file="file://$PROJECT_DIR$/WW_verify_PhTaeFXy6hf4BVi1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/fish-js/axios.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNAME">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WW_verify_PhTaeFXy6hf4BVi1.txt" />
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/static/fish-js/axios.min.js" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/detail.html" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/login.html" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/vmf/background/create.html" />
@@ -645,35 +685,13 @@
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/templates/login.html" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/initial/views.py" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/static/css/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/dairy/20180309/content.fish">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dairy/20180313/Mitsuha.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dairy/20180313/content.fish">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dairy/20180315/content.fish">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dairy/20180319/content.fish">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dairy/20180401/content.fish">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dairy/20180309/content.fish" />
+    <entry file="file://$PROJECT_DIR$/dairy/20180313/Mitsuha.html" />
+    <entry file="file://$PROJECT_DIR$/dairy/20180313/content.fish" />
+    <entry file="file://$PROJECT_DIR$/dairy/20180315/content.fish" />
+    <entry file="file://$PROJECT_DIR$/dairy/20180319/content.fish" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/dairy/20180401/content.fish" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/base_form.py" />
     <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1230841543/builtins.py" />
     <entry file="file://D:/Lib/site-packages/flask/app.py" />
@@ -697,5 +715,18 @@
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/vmf/user/views.py" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/app.py" />
     <entry file="file://$PROJECT_DIR$/fishisalovelygirl/lovelygirl.py" />
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="823" column="59" selection-start-line="823" selection-start-column="59" selection-end-line="823" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNAME">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
